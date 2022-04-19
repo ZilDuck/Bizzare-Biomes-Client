@@ -13,8 +13,8 @@
   }]
 </script>
 
-<div class="flex flex-col border-4 border-gray-700 rounded">
+<div class="flex flex-col {$$restProps.class}">
   {#each recentlyMinted as nft}
-    <img src="{nft.quick_resource}" alt="Loading biome" class="h-28 bg-green-200 "/>
+    <img src="{nft.quick_resource}" alt="Loading biome" class="min-h-28 bg-green-200 "/>
   {/each}
 </div>

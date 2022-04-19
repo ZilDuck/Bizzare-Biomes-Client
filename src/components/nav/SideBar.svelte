@@ -12,7 +12,7 @@
     transition:slide
   >
     <nav class="p-6 text-xl flex flex-col space-y-4 mt-4">
-      <ConnectWallet on:click={closeSidebar} class="w-full" />
+      <ConnectWallet on:click={closeSidebar} />
       <NavItem on:click={closeSidebar} to="/">Home</NavItem>
       <NavItem on:click={closeSidebar} to="/marketplace">Marketplace</NavItem>
       <NavItem on:click={closeSidebar} to="/explore">Explore</NavItem>

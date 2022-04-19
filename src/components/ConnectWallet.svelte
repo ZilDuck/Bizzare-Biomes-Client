@@ -12,7 +12,7 @@
 </script>
 
 <template>
-	<button on:click={handleClick} class="btn bg-white text-lg font-normal">
+	<button on:click={handleClick} class="btn bg-white text-primary text-lg font-normal">
     {$wallet.bech32
         ? `${$wallet.bech32.slice(0, 6)}...${$wallet.bech32.slice(-6)}`
         : 'Connect wallet'}
