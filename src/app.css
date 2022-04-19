@@ -1,0 +1,60 @@
+/* Write your global styles here, in PostCSS syntax */
+
+@import '@fontsource/fira-mono';
+
+@tailwind base;
+
+
+@font-face {
+  font-family: 'Craftwork Grotesk';
+  font-weight: 400;
+  src: url('./assets/fonts/CraftworkGrotesk-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Craftwork Grotesk';
+  font-weight: 600;
+  src: url('./assets/fonts/CraftworkGrotesk-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Craftwork Grotesk';
+  font-weight: 700;
+  src: url('./assets/fonts/CraftworkGrotesk-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Craftwork Grotesk';
+  font-weight: 900;
+  src: url('./assets/fonts/CraftworkGrotesk-Heavy.woff2') format('woff2');
+}
+
+* {
+  font-family: 'Craftwork Grotesk', 'Inter', 'Fira Sans', 'Helvetica Neue', 'Helvetica', sans-serif;
+}
+
+:root {
+	--color-primary-h: 221;
+  --color-primary-s: 27%;
+  --color-primary-l: 39%;
+
+	--color-snow-h: 193;
+	--color-snow-s: 36%;
+	--color-snow-l: 95%;
+
+}
+
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply inline-block px-5 py-3 rounded-lg focus:outline-none focus:ring focus:ring-offset-2 font-normal text-base;
+  }
+  .btn-primary {
+    @apply bg-primary text-white border-primary border-2 hover:bg-indigo-400 focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-600;
+  }
+  .btn-secondary {
+    @apply bg-transparent text-white hover:bg-gray-200 border-white border-2 focus:ring-gray-300 focus:ring-opacity-50 active:bg-gray-400;
+  }
+}
