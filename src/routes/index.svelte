@@ -129,7 +129,7 @@
 		<div class="grid grid-cols-4 gap-6 mt-20">
 			{#each Array(8) as i}
 				<div class="bg-[#90C772] flex flex-col items-center justify-center p-5">
-					<img src={duck1} alt="Floating island" class="max-w-[100%]" />
+					<img src={duck1} alt="Floating island" class="max-w-[100%] mb-5" />
 					<h3 class="text-white text-xl mb-[10px] font-semibold">Nines</h3>
 					<p class="text-white">Developer</p>
 				</div>
