@@ -35,7 +35,7 @@
 				<NavItem to="/mint" class="self-center">Mint</NavItem>
 				<NavItem to="/marketplace" class="self-center">Marketplace</NavItem>
 			</div>
-			<div class="flex flex-row space-x-4 py-auto ml-auto items-center mr-10">
+			<div class="flex flex-row space-x-4 py-auto ml-auto items-center mr-10 text-white">
 				<Discord />
 				<Twitter />
 				<Telegram />
