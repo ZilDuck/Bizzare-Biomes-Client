@@ -1,6 +1,4 @@
 <script lang="ts">
-import { compute_rest_props } from "svelte/internal";
-
 
     let mintTime = '01/01/2022, 10:00AM GMT'
     let mintCount = 2048
@@ -25,3 +23,4 @@ import { compute_rest_props } from "svelte/internal";
         <a href={'/mint'} class="btn btn-primary">Mint a new biome</a>
     </div>
 </div>
+
