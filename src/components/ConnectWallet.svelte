@@ -1,21 +1,22 @@
 <script lang="ts">
-	import { browser } from '$app/env';
-	import { goto } from '$app/navigation';
-	import wallet from '../store/wallet'
+  import wallet from '../store/wallet'
 
-	function handleClick() {
-    alert('clicked')
-    console.log(window.zilPay)
-		if (browser && $wallet.isConnected) goto(`/account/${$wallet.bech32}`);
-		if (browser && !window.zilPay) return;
-		wallet.connect();
-	}
+  let showWalletOptions = false
+
+  $: truncatedWallet = $wallet.bech32
+    ? `${$wallet.bech32.slice(0, 6)}...${$wallet.bech32.slice(-6)}`
+    : false
+
+  function handleWallet() {
+		wallet.connect()
+  }
 </script>
 
-<template>
-	<button on:click={handleClick} class="btn bg-white text-primary text-lg font-normal">
-    {$wallet.bech32
-        ? `${$wallet.bech32.slice(0, 6)}...${$wallet.bech32.slice(-6)}`
-        : 'Connect wallet'}
+<div class="relative">
+  <button
+    class="flex items-center justify-center h-12 bg-white rounded-lg text-zilkroad-gray-dark pl-[20px] pr-[20px] relative"
+    on:click={handleWallet}
+  >
+    {truncatedWallet || 'Connect wallet'}
   </button>
-</template>
+</div>

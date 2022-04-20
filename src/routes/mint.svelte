@@ -1,8 +1,8 @@
 <script lang="ts">
 	import MintCard from "../components/MintCard.svelte";
 	import Footer from '../components/Footer.svelte'
-    let zeldaMoon = 'src/assets/backgrounds/Zelda moon.png'
-    let gemFields = 'src/assets/foregrounds/Gem fields.png'
+  let zeldaMoon = 'src/assets/backgrounds/Zelda moon.png'
+  let gemFields = 'src/assets/foregrounds/Gem fields.png'
 </script>
 
 <svelte:head>
@@ -13,7 +13,7 @@
 
 <img src="{zeldaMoon}" alt="Zelda style moon" class="object-cover w-full h-full" />
 
-<div class="bg-[#763344] w-full h-min -mt-24">
+<div class="bg-[#763344] w-full h-min -mt-[180px]">
     <h1 class="text-center text-white font-black text-7xl">Time to mint a biome.</h1>
     <div class="w-full py-2.5 bottom-0 inset-x-0  text-white text-xl font-normal text-center leading-4">The time has finally come to create yourself a biome.</div>
 </div>

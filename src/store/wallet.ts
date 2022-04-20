@@ -1,8 +1,9 @@
 import type { Writable } from 'svelte/store'
 import Big from 'big.js'
+import * as Cookie from 'cookie'
 import { browser } from '$app/env'
 import { writable } from 'svelte/store'
-import { zilliqa } from '../zilliqa/zilliqa'
+
 
 export type Wallet = {
   base16? : string
@@ -19,11 +20,13 @@ const createWalletStore = () => {
   })
 
   const updateWalletData = async () => {
-    const { wallet } = window.zilPay
+    const { wallet, blockchain } = window.zilPay
     const { base16, bech32 } = wallet.defaultAccount
     const network = wallet.net
 
-    const getBalanceResponse = await zilliqa.blockchain.getBalance(base16)
+    const getBalanceResponse = await blockchain.getBalance(base16)
+
+    document.cookie = Cookie.serialize('userAddress', base16, { path: '' })
 
     update(() => ({
       base16,
@@ -36,6 +39,7 @@ const createWalletStore = () => {
   }
 
   const connect = async () => {
+    console.log('connect')
     const { wallet } = window.zilPay
 
     const wasConnectionSuccessful = await wallet.connect()
@@ -59,9 +63,10 @@ const createWalletStore = () => {
   }
 
   const fetchNonce = async () => {
+    const { blockchain } = window.zilPay
     return new Promise<number>((resolve) => {
       const unsubscribe = subscribe(async (wallet) => {
-        const getBalanceResponse = await zilliqa.blockchain.getBalance(
+        const getBalanceResponse = await blockchain.getBalance(
           wallet.base16!
         )
         update((w) => ({
