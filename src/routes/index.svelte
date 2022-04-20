@@ -3,7 +3,8 @@
 </script>
 
 <script lang="ts">
-import RecentlyMinted from "../components/RecentlyMinted.svelte";
+	import MintInfo from "../components/MintInfo.svelte";
+	import RecentlyMinted from "../components/RecentlyMinted.svelte";
 
 	let pineForest = "src/assets/backgrounds/Pine forest.png"
 	let rocket = "src/assets/foregrounds/Cloud world.png"
@@ -24,7 +25,7 @@ import RecentlyMinted from "../components/RecentlyMinted.svelte";
 		<h2 class="mt-5 text-xl">
 			An NFT project for duck holders, and newcomers alike.
 		</h2>
-
+		<MintInfo class="mt-5" />
 	</div>
 </section>
 
