@@ -4,6 +4,7 @@
 	import wallet from '../store/wallet'
 
 	function handleClick() {
+    alert('clicked')
     console.log(window.zilPay)
 		if (browser && $wallet.isConnected) goto(`/account/${$wallet.bech32}`);
 		if (browser && !window.zilPay) return;

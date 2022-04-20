@@ -3,6 +3,8 @@
 </script>
 
 <script lang="ts">
+import Footer from '../components/Footer.svelte';
+
 	import MintInfo from '../components/MintInfo.svelte';
 	import RecentlyMinted from '../components/RecentlyMinted.svelte';
 
@@ -19,12 +21,6 @@
 	// Ducks
 	let duck1 = 'src/assets/ducks/1.png';
 	let duck2 = 'src/assets/foregrounds/2.png';
-
-	// Social
-	let discord = 'src/assets/icons/discord.png';
-	let twitter = 'src/assets/icons/twitter.png';
-	let facebook = 'src/assets/icons/facebook.png';
-	let telegram = 'src/assets/icons/telegram.png';
 </script>
 
 <svelte:head>
@@ -45,7 +41,7 @@
 
 <img src={pineForest} alt="Pine Forest" />
 
-<section style="background: #50cf7d" class="py-28">
+<section class="bg-[#50cf7d] py-28">
 	<div class="max-w-screen-xl mx-auto grid grid-cols-2 items-center">
 		<div>
 			<RecentlyMinted class="border-4 border-gray-700 rounded" />
@@ -66,13 +62,13 @@
 	</div>
 </section>
 
-<img src={rocket} alt="rocket" style="background: #50cf7d;" />
+<img src={rocket} alt="rocket" class="bg-[#50cf7d]"/>
 
 <div class="h-16" style="background: linear-gradient(180deg, #E6F1F2 0%, #CCEEF7 100%);" />
 
-<img src={shroomland} alt="shroomland" style="background: #CCEEF7;" />
+<img src={shroomland} alt="shroomland" class="bg-[#CCEEF7]" />
 
-<section style="background: #A1A1E4;">
+<section class="bg-[#A1A1E4]" >
 	<div class="max-w-screen-xl mx-auto py-28">
 		<div class="max-w-screen-xl flex mx-auto justify-center items-center flex-col text-white ">
 			<h1 class="font-semibold text-4xl max-w-[496px] text-center">
@@ -89,7 +85,7 @@
 
 <div class="h-16" style="background: linear-gradient(180deg, #A1A1E4 0%, #FCB698 100%);" />
 
-<img src={spikyRidge} alt="spiky ridge" style="background: #FCB698;" />
+<img src={spikyRidge} alt="spiky ridge" class="bg-[#FCB698]" />
 <section style="background: #E4CF81;">
 	<div class="max-w-screen-xl mx-auto py-28 text-primary">
 		<div class="max-w-screen-xl flex mx-auto justify-center items-center flex-col  ">
@@ -114,8 +110,10 @@
 </section>
 
 <div class="h-28" style="background: linear-gradient(180deg, #E4CF81 0%, #FDC3CB 100%);" />
-<img src={floatingIsland} alt="Floating island" style="background: #9DD380;" class="w-full" />
-<section style="background: #9DD380;">
+
+<img src={floatingIsland} alt="Floating island" class="bg=[#9DD380] w-full" />
+
+<section class="bg-[#9DD380]">
 	<div class="max-w-screen-xl mx-auto pt-28 text-primary">
 		<div class="max-w-screen-xl flex mx-auto justify-center items-center flex-col  ">
 			<h1 class="font-semibold text-4xl text-white max-w-[496px] text-center">
@@ -136,75 +134,6 @@
 			{/each}
 		</div>
 	</div>
+	<Footer />
 </section>
 
-<img src={arctic} alt="Arctic" class="bg-[#9DD380]" />
-<section class="pt-28 pb-10 bg-[#EEF5F7]">
-	<div class="max-w-screen-xl mx-auto grid grid-cols-2 items-center mb-20">
-		<div>
-			<h1 class="text-4xl mb-5 font-semibold text-[#495A7F]">Join the discord.</h1>
-			<p class="font-normal text-base text-[#495A7F]">
-				Join the discord and connect with the rest of the community. Here you will find duck lovers,
-				as well as our new biome holders. A friendly place to connect with others.
-			</p>
-			<div class="flex flex-row my-5 gap-x-5">
-				<button class="btn btn-primary">Join the discord</button>
-			</div>
-		</div>
-	</div>
-	<hr class="border-b-[1px] border-t-0 border-[rgba(0,0,0,0.1)] bg-transparent" />
-	<div class="max-w-screen-xl mx-auto grid grid-cols-4 gap-6 my-20">
-		<div>
-			<h2 class="font-semibold mb-5 text-[#495A7F]">Team</h2>
-			<ul>
-				<li><a href="#" class="text-[#495A7F] mb-[16px] block">About us</a></li>
-			</ul>
-		</div>
-		<div>
-			<h2 class="font-semibold mb-5 text-[#495A7F]">Links</h2>
-			<ul>
-				<li><a href="#" class="text-[#495A7F] mb-[16px] block">Mint an NFT</a></li>
-				<li><a href="#" class="text-[#495A7F] mb-[16px] block">View all biomes</a></li>
-				<li><a href="#" class="text-[#495A7F] mb-[16px] block">Marketplace</a></li>
-			</ul>
-		</div>
-		<div>
-			<h2 class="font-semibold mb-5 text-[#495A7F]">Other</h2>
-			<ul>
-				<li><a href="#" class="text-[#495A7F] mb-[16px] block">Privacy policy</a></li>
-				<li><a href="#" class="text-[#495A7F] mb-[16px] block">Terms and conditions</a></li>
-				<li><a href="#" class="text-[#495A7F] mb-[16px] block">Cookie policy</a></li>
-				<li><a href="#" class="text-[#495A7F] mb-[16px] block">Business info</a></li>
-			</ul>
-		</div>
-		<div>
-			<h2 class="font-semibold mb-5 text-[#495A7F]">Team</h2>
-			<ul class="flex">
-				<li class="mr-5">
-					<a href="#" class="text-[#495A7F]">
-						<img src={discord} alt="Arctic" />
-					</a>
-				</li>
-				<li class="mr-5">
-					<a href="#" class="text-[#495A7F]">
-						<img src={twitter} alt="Arctic" />
-					</a>
-				</li>
-				<li class="mr-5">
-					<a href="#" class="text-[#495A7F]">
-						<img src={facebook} alt="Arctic" />
-					</a>
-				</li>
-				<li class="mr-5">
-					<a href="#" class="text-[#495A7F]">
-						<img src={telegram} alt="Arctic" />
-					</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<hr class="border-b-[1px] border-t-0 border-[rgba(0,0,0,0.1)] bg-transparent" />
-	<div class="max-w-screen-xl mx-auto">
-		<p class="text-[#495A7F] mt-10">© 2021 - Bizarre Biomes.</p>
-	</div>
-</section>

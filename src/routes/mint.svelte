@@ -1,6 +1,6 @@
 <script lang="ts">
-import MintCard from "../components/MintCard.svelte";
-
+	import MintCard from "../components/MintCard.svelte";
+	import Footer from '../components/Footer.svelte'
     let zeldaMoon = 'src/assets/backgrounds/Zelda moon.png'
     let gemFields = 'src/assets/foregrounds/Gem fields.png'
 </script>
@@ -9,33 +9,31 @@ import MintCard from "../components/MintCard.svelte";
 	<title>Mint</title>
 </svelte:head>
 
-<div class="h-[69px]" style="background: #9A233E;" />
+<div class="h-[69px] bg-[#9A233E]" />
 
 <img src="{zeldaMoon}" alt="Zelda style moon" class="object-cover w-full h-full" />
 
-<div class="w-full h-min -mt-24" style="background: #763344;">
+<div class="bg-[#763344] w-full h-min -mt-24">
     <h1 class="text-center text-white font-black text-7xl">Time to mint a biome.</h1>
     <div class="w-full py-2.5 bottom-0 inset-x-0  text-white text-xl font-normal text-center leading-4">The time has finally come to create yourself a biome.</div>
 </div>
 
-<section class="pt-[120px]" style="background: #763344;" >
+<section class="bg-[#763344] pt-[120px]" >
     <div class="max-w-screen-xl mx-auto grid grid-cols-2">
 		<div class="px-28 py-auto self-center">
 			<h2 class="text-4xl mb-5 font-semibold text-white">It's time to create a new biome.</h2>
 			<p class="font-normal text-base text-white">
-                The wait is over. Use the card on the right-hand side to mint yourself a biome. Once they’re gone, they’re gone. So grab them as quick as you can!
-            </p>
+        The wait is over. Use the card on the right-hand side to mint yourself a biome. Once they’re gone, they’re gone. So grab them as quick as you can!
+      </p>
 		</div>
-        <div class="">
-			<MintCard class="max-w-lg"/>
-		</div>	
+		<MintCard class="max-w-lg"/>
 	</div>
 </section>
 
 
-<img src="{gemFields}" style="background: #763344;" alt="Gem fields" />
+<img src="{gemFields}" class="bg-[#763344]" alt="Gem fields" />
 
-<section style="background: #98BBD6;">
+<section class="bg-[#98BBD6]">
 	<div class="max-w-screen-xl mx-auto py-28 text-primary">
 		<div class="max-w-screen-xl flex mx-auto justify-center items-center flex-col  ">
 			<h1 class="font-semibold text-4xl max-w-[496px] text-center">Frequently asked questions</h1>
@@ -56,4 +54,5 @@ import MintCard from "../components/MintCard.svelte";
 			{/each}
 		</div>
 	</div>
+	<Footer />
 </section>

@@ -44,7 +44,7 @@ const createWalletStore = () => {
 
     wallet.observableAccount().subscribe(updateWalletData)
 
-    wallet.observableNetwork().subscribe((network) => {
+    wallet.observableNetwork().subscribe((network: any) => {
       update((w) => ({ ...w, network }))
     })
 
@@ -54,7 +54,7 @@ const createWalletStore = () => {
   const increaseNonce = () => {
     update((w) => ({
       ...w,
-      nonce: w.nonce + 1
+      nonce: w.nonce! + 1
     }))
   }
 
@@ -62,7 +62,7 @@ const createWalletStore = () => {
     return new Promise<number>((resolve) => {
       const unsubscribe = subscribe(async (wallet) => {
         const getBalanceResponse = await zilliqa.blockchain.getBalance(
-          wallet.base16
+          wallet.base16!
         )
         update((w) => ({
           ...w,

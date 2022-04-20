@@ -1,6 +1,5 @@
 
 <script>
-  import Footer from '../components/Footer.svelte'
   import '../app.css'
   import NavBar from '../components/nav/NavBar.svelte'
   import SideBar from '../components/nav/SideBar.svelte'
@@ -17,7 +16,7 @@
   <div class="min-h-screen">
     <slot />
   </div>
- 
+  
 </div>
 
 <style>

@@ -13,3 +13,7 @@ declare namespace App {
 
 	// interface Stuff {}
 }
+
+declare interface Window {
+  zilPay?: any
+}
