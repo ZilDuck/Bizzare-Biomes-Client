@@ -13,6 +13,9 @@
 	let spikyRidge = 'src/assets/backgrounds/Spiky ridge.png';
 	let floatingIsland = 'src/assets/compositions/1.png';
 
+	// Foregrounds
+	let arctic = 'src/assets/foregrounds/Arctic.png';
+
 	// Ducks
 	let duck1 = 'src/assets/ducks/1.png';
 	let duck2 = 'src/assets/foregrounds/2.png';
@@ -42,9 +45,9 @@
 			<RecentlyMinted class="border-4 border-gray-700 rounded" />
 		</div>
 		<div class="px-28">
-			<h2 class="text-4xl mb-5 font-semibold text-white">
+			<h1 class="text-4xl mb-5 font-semibold text-white">
 				From the skyline to the pits of Mordor.
-			</h2>
+			</h1>
 			<p class="font-normal text-base text-white">
 				Welcome to the newest project from the team behind Ducks and Zilkroad. A collection of 2000
 				different biomes.
@@ -81,7 +84,6 @@
 <div class="h-16" style="background: linear-gradient(180deg, #A1A1E4 0%, #FCB698 100%);" />
 
 <img src={spikyRidge} alt="spiky ridge" style="background: #FCB698;" />
-floatingIsland
 <section style="background: #E4CF81;">
 	<div class="max-w-screen-xl mx-auto py-28 text-primary">
 		<div class="max-w-screen-xl flex mx-auto justify-center items-center flex-col  ">
@@ -106,9 +108,9 @@ floatingIsland
 </section>
 
 <div class="h-28" style="background: linear-gradient(180deg, #E4CF81 0%, #FDC3CB 100%);" />
-<img src={floatingIsland} alt="Floating island" style="background: #9DD380;" />
+<img src={floatingIsland} alt="Floating island" style="background: #9DD380;" class="w-full" />
 <section style="background: #9DD380;">
-	<div class="max-w-screen-xl mx-auto py-28 text-primary">
+	<div class="max-w-screen-xl mx-auto pt-28 text-primary">
 		<div class="max-w-screen-xl flex mx-auto justify-center items-center flex-col  ">
 			<h1 class="font-semibold text-4xl text-white max-w-[496px] text-center">
 				A creation from the team behind Ducks.
@@ -128,4 +130,21 @@ floatingIsland
 			{/each}
 		</div>
 	</div>
+</section>
+
+<img src={arctic} alt="Arctic" class="bg-[#9DD380]" />
+<section class="py-28 bg-[#EEF5F7]">
+	<div class="max-w-screen-xl mx-auto grid grid-cols-2 items-center mb-20">
+		<div>
+			<h1 class="text-4xl mb-5 font-semibold text-[#495A7F]">Join the discord.</h1>
+			<p class="font-normal text-base text-[#495A7F]">
+				Join the discord and connect with the rest of the community. Here you will find duck lovers,
+				as well as our new biome holders. A friendly place to connect with others.
+			</p>
+			<div class="flex flex-row my-5 gap-x-5">
+				<button class="btn btn-primary">Join the discord</button>
+			</div>
+		</div>
+	</div>
+	<hr class="border-b-[1px] border-t-0 border-[rgba(0,0,0,0.1)] bg-transparent" />
 </section>
