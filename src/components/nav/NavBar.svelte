@@ -9,7 +9,7 @@
 	export let sidebar = false;
 </script>
 
-<div class="absolute w-full">
+<div class="absolute w-full z-[10]">
 	<div
 		class="
         w-full
@@ -20,7 +20,6 @@
         justify-center
         flex
         bg-transparent
-        
         {$$restProps.class}
       "
 	>
