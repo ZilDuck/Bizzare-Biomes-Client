@@ -19,6 +19,12 @@
 	// Ducks
 	let duck1 = 'src/assets/ducks/1.png';
 	let duck2 = 'src/assets/foregrounds/2.png';
+
+	// Social
+	let discord = 'src/assets/icons/discord.png';
+	let twitter = 'src/assets/icons/twitter.png';
+	let facebook = 'src/assets/icons/facebook.png';
+	let telegram = 'src/assets/icons/telegram.png';
 </script>
 
 <svelte:head>
@@ -133,7 +139,7 @@
 </section>
 
 <img src={arctic} alt="Arctic" class="bg-[#9DD380]" />
-<section class="py-28 bg-[#EEF5F7]">
+<section class="pt-28 pb-10 bg-[#EEF5F7]">
 	<div class="max-w-screen-xl mx-auto grid grid-cols-2 items-center mb-20">
 		<div>
 			<h1 class="text-4xl mb-5 font-semibold text-[#495A7F]">Join the discord.</h1>
@@ -147,4 +153,58 @@
 		</div>
 	</div>
 	<hr class="border-b-[1px] border-t-0 border-[rgba(0,0,0,0.1)] bg-transparent" />
+	<div class="max-w-screen-xl mx-auto grid grid-cols-4 gap-6 my-20">
+		<div>
+			<h2 class="font-semibold mb-5 text-[#495A7F]">Team</h2>
+			<ul>
+				<li><a href="#" class="text-[#495A7F] mb-[16px] block">About us</a></li>
+			</ul>
+		</div>
+		<div>
+			<h2 class="font-semibold mb-5 text-[#495A7F]">Links</h2>
+			<ul>
+				<li><a href="#" class="text-[#495A7F] mb-[16px] block">Mint an NFT</a></li>
+				<li><a href="#" class="text-[#495A7F] mb-[16px] block">View all biomes</a></li>
+				<li><a href="#" class="text-[#495A7F] mb-[16px] block">Marketplace</a></li>
+			</ul>
+		</div>
+		<div>
+			<h2 class="font-semibold mb-5 text-[#495A7F]">Other</h2>
+			<ul>
+				<li><a href="#" class="text-[#495A7F] mb-[16px] block">Privacy policy</a></li>
+				<li><a href="#" class="text-[#495A7F] mb-[16px] block">Terms and conditions</a></li>
+				<li><a href="#" class="text-[#495A7F] mb-[16px] block">Cookie policy</a></li>
+				<li><a href="#" class="text-[#495A7F] mb-[16px] block">Business info</a></li>
+			</ul>
+		</div>
+		<div>
+			<h2 class="font-semibold mb-5 text-[#495A7F]">Team</h2>
+			<ul class="flex">
+				<li class="mr-5">
+					<a href="#" class="text-[#495A7F]">
+						<img src={discord} alt="Arctic" />
+					</a>
+				</li>
+				<li class="mr-5">
+					<a href="#" class="text-[#495A7F]">
+						<img src={twitter} alt="Arctic" />
+					</a>
+				</li>
+				<li class="mr-5">
+					<a href="#" class="text-[#495A7F]">
+						<img src={facebook} alt="Arctic" />
+					</a>
+				</li>
+				<li class="mr-5">
+					<a href="#" class="text-[#495A7F]">
+						<img src={telegram} alt="Arctic" />
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<hr class="border-b-[1px] border-t-0 border-[rgba(0,0,0,0.1)] bg-transparent" />
+	<div class="max-w-screen-xl mx-auto">
+		<p class="text-[#495A7F] mt-10">© 2021 - Bizarre Biomes.</p>
+	</div>
 </section>
