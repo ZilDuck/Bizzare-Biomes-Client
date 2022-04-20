@@ -49,19 +49,13 @@
 			<h2 class="font-semibold mb-5 text-[#495A7F]">Team</h2>
 			<ul class="flex">
 				<li class="mr-5">
-					<a href="#" class="text-[#495A7F]">
-						<Discord />
-					</a>
+					<Discord class="text-primary" />
 				</li>
 				<li class="mr-5">
-					<a href="#" class="text-[#495A7F]">
-						<Twitter />
-					</a>
+					<Twitter class="text-primary" />
 				</li>
 				<li class="mr-5">
-					<a href="#" class="text-[#495A7F]">
-						<Telegram />
-					</a>
+					<Telegram class="text-primary"/>
 				</li>
 			</ul>
 		</div>
