@@ -9,14 +9,11 @@ import Footer from '../components/Footer.svelte';
 	import RecentlyMinted from '../components/RecentlyMinted.svelte';
 
 	// Backgrounds
-	let pineForest = 'src/assets/backgrounds/Pine forest.png';
-	let rocket = 'src/assets/foregrounds/Cloud world.png';
-	let shroomland = 'src/assets/foregrounds/Shroomland.png';
-	let spikyRidge = 'src/assets/backgrounds/Spiky ridge.png';
-	let floatingIsland = 'src/assets/compositions/1.png';
-
-	// Foregrounds
-	let arctic = 'src/assets/foregrounds/Arctic.png';
+	let pineForest = '/assets/backgrounds/Pine forest.png';
+	let rocket = '/assets/foregrounds/Cloud world.png';
+	let shroomland = '/assets/foregrounds/Shroomland.png';
+	let spikyRidge = '/assets/backgrounds/Spiky ridge.png';
+	let floatingIsland = '/assets/compositions/1.png';
 
 	// Ducks
 	let duck1 = 'src/assets/ducks/1.png';

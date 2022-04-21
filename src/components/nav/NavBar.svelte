@@ -30,7 +30,7 @@
 			</div>
 			<div class="ml-4 self-center flex">
 				<NavItem to="/" class="self-center">Home</NavItem>
-				<NavItem to="/biomes" class="self-center">Biomes</NavItem>
+				<NavItem to="/directory" class="self-center">Biomes</NavItem>
 				<NavItem to="/mint" class="self-center">Mint</NavItem>
 				<NavItem to="/marketplace" class="self-center">Marketplace</NavItem>
 			</div>

@@ -3,22 +3,19 @@
 </script>
 
 <script lang="ts">
-	import Footer from '../components/Footer.svelte';
-
-	import MintInfo from '../components/MintInfo.svelte';
-	import RecentlyMinted from '../components/RecentlyMinted.svelte';
+	import Footer from '../../../components/Footer.svelte';
 
 	// Placeholder
-	let nftPlaceholder = 'src/assets/placeholders/nft-placeholder.png';
+	let nftPlaceholder = '/assets/placeholders/nft-placeholder.png';
 
 	// Backgrounds
-	let floatingIsland = 'src/assets/backgrounds/floating-islands.png';
+	let floatingIsland = '/assets/backgrounds/floating-islands.png';
 
 	// Nft details
 	let nftName = 'Name of NFT';
 	let biomeTypeName = 'Floating islands';
 	let biomeTypeUrl = '#';
-	let biomeTypeBackground = 'src/assets/backgrounds/floating-islands.png';
+	let biomeTypeBackground = '/assets/backgrounds/floating-islands.png';
 </script>
 
 <svelte:head>

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import MintCard from "../components/MintCard.svelte";
 	import Footer from '../components/Footer.svelte'
-  let zeldaMoon = 'src/assets/backgrounds/Zelda moon.png'
-  let gemFields = 'src/assets/foregrounds/Gem fields.png'
+  let zeldaMoon = '/assets/backgrounds/Zelda moon.png'
+  let gemFields = '/assets/foregrounds/Gem fields.png'
 </script>
 
 <svelte:head>

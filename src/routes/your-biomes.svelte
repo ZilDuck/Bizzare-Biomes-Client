@@ -6,10 +6,10 @@
 	import Footer from '../components/Footer.svelte';
 
 	// Backgrounds
-	let nightSky = 'src/assets/backgrounds/Night sky.png';
+	let nightSky = '/assets/backgrounds/Night sky.png';
 
 	// Comps
-	let comp1 = 'src/assets/compositions/1.png';
+	let comp1 = '/assets/compositions/1.png';
 </script>
 
 <svelte:head>

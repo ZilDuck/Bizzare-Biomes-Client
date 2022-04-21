@@ -67,7 +67,7 @@ const createWalletStore = () => {
     return new Promise<number>((resolve) => {
       const unsubscribe = subscribe(async (wallet) => {
         const getBalanceResponse = await blockchain.getBalance(
-          wallet.base16!
+          wallet.base16
         )
         update((w) => ({
           ...w,
