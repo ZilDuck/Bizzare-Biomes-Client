@@ -22,8 +22,8 @@
 	<title>Home</title>
 </svelte:head>
 
-<section class="flex flex-col justify-center items-center flex-1 bg-[{mainColor}] relative">
-	<div class="top-section absolute top-0 left-0 w-full h-[100px] bg-[{topColor}]" />
+<section class="flex flex-col justify-center items-center flex-1 bg-[#50CF7D] relative">
+	<div class="top-section absolute top-0 left-0 w-full h-[100px] bg-[#3477B7]" />
 	<img src={pineForest} alt="Pine Forest" class="w-full absolute top-20 left-0" />
 	<div
 		class="max-w-screen-xl flex mx-auto justify-center items-center flex-col text-white mt-16 mb-[120px] z-0"
