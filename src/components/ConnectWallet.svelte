@@ -1,8 +1,6 @@
 <script lang="ts">
   import wallet from '../store/wallet'
 
-  let showWalletOptions = false
-
   $: truncatedWallet = $wallet.bech32
     ? `${$wallet.bech32.slice(0, 6)}...${$wallet.bech32.slice(-6)}`
     : false

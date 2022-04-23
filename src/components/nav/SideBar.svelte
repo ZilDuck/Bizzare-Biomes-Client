@@ -13,9 +13,10 @@
   >
     <nav class="p-6 text-xl flex flex-col space-y-4 mt-4">
       <ConnectWallet on:click={closeSidebar} />
-      <NavItem on:click={closeSidebar} to="/">Home</NavItem>
-      <NavItem on:click={closeSidebar} to="/marketplace">Marketplace</NavItem>
-      <NavItem on:click={closeSidebar} to="/explore">Explore</NavItem>
+      <NavItem on:click={closeSidebar} to="/" class="self-center">Home</NavItem>
+			<NavItem on:click={closeSidebar} to="/directory" class="self-center">Biomes</NavItem>
+			<NavItem on:click={closeSidebar} to="/mint" class="self-center">Mint</NavItem>
+			<NavItem on:click={closeSidebar} to="/marketplace" class="self-center">Marketplace</NavItem>
     </nav>
   </aside>
 {/if}
