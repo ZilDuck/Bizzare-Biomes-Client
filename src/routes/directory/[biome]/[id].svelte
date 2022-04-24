@@ -3,7 +3,14 @@
 </script>
 
 <script lang="ts">
-	import Footer from '../../../components/Footer.svelte';
+	import {page} from '$app/stores'
+import NftCard from '../../../components/NFTCard.svelte';
+import { onMount } from 'svelte';
+	import API from '../../../api'
+	const biome = $page.params.biome
+	const id = $page.params.id
+	console.log(biome, id)
+	import Footer from '../../../components/Footer.svelte'
 
 	// Placeholder
 	let nftPlaceholder = '/assets/placeholders/nft-placeholder.png';
@@ -12,6 +19,27 @@
 	let floatingIsland = '/assets/backgrounds/floating-islands.png';
 
 	// Nft details
+	
+	import wallet from '../../../store/wallet'
+
+	$: truncatedWallet = $wallet.bech32
+		? `${$wallet.bech32.slice(0, 6)}...${$wallet.bech32.slice(-6)}`
+		: false
+
+	
+	let ownedNFTs: any
+	onMount(() => {
+		async function getHoldersNFTs () {
+			ownedNFTs = await API.get(`address/0x24DdeDbf3A3DF608f4C9fbF56153866947e1b159`)
+		}
+		getHoldersNFTs()
+	})
+
+	$: {
+		console.log(ownedNFTs)
+	}
+
+
 	let nftName = 'Name of NFT';
 	let biomeTypeName = 'Floating islands';
 	let biomeTypeUrl = '#';
@@ -36,7 +64,7 @@
 	</div>
 
 	<div class="flex flex-row my-5 gap-x-5 w-full max-w-screen-xl justify-start">
-		<a href={biomeTypeUrl} class="btn btn-primary">Go back to all {biomeTypeName}'s</a>
+		<a href='/directory/{biome}' class="btn btn-primary">Go back to all {biomeTypeName}'s</a>
 	</div>
 </section>
 
@@ -62,7 +90,7 @@
 			</div>
 			<div class="flex items-center">
 				<div class="w-[40px] h-[40px] bg-[#495A7F] rounded-[100%] mr-5" />
-				<p class="text-[#495A7F]">Owned by <a href="#" class="underline">zil16wg79q...</a></p>
+				<p class="text-[#495A7F]">Owned by <a href="#" class="underline">{truncatedWallet}</a></p>
 			</div>
 		</div>
 		<div class="flex items-center mt-5 mb-[120px]">
@@ -75,15 +103,13 @@
 
 		<!-- Owned NFTs -->
 		<div class="w-full max-w-screen-xl">
-			<h2 class="text-[#495A7F] font-semibold text-2xl">zil16wg79q’s owned NFTs</h2>
+			<h2 class="text-[#495A7F] font-semibold text-2xl">{truncatedWallet}’s owned NFTs</h2>
 			<div class="grid grid-cols-4 gap-6 mt-10">
-				{#each Array(8) as i}
-					<div class="flex flex-col mb-5">
-						<img src={nftPlaceholder} alt="Nft" class="mb-5 rounded-lg" />
-						<h3 class="text-[#495A7F] text-xl mb-[10px] font-semibold">Item name</h3>
-						<p class="text-[#495A7F]">Collection name</p>
-					</div>
+			{#if ownedNFTs}
+				{#each ownedNFTs as i}
+					<NftCard nft={i} />
 				{/each}
+			{/if}
 			</div>
 		</div>
 	</div>

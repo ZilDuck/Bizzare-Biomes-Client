@@ -3,18 +3,18 @@
 </script>
 
 <script lang="ts">
-	import { worldLevelBiomes } from '../../store/biomes';
+	import { worldLevelBiomes } from '../../../store/biomes';
 	let arctic = '/assets/foregrounds/Arctic.png'
 	import {page} from '$app/stores'
-	import Discord from '../../components/icons/Discord.svelte';
-	import Twitter from '../../components/icons/Twitter.svelte';
-	import Telegram from '../../components/icons/Telegram.svelte';
+	import Discord from '../../../components/icons/Discord.svelte';
+	import Twitter from '../../../components/icons/Twitter.svelte';
+	import Telegram from '../../../components/icons/Telegram.svelte';
 	
 	const currentPage = $page.url.pathname.split('/directory/')[1]
 	const biome = $worldLevelBiomes.find(biome => biome.sitePath === currentPage)
 
 	$: topColor = biome?.topColour;
-	$: mainColor = biome?.bottomColour;
+
 	console.log(biome)
 </script>
 
@@ -43,8 +43,8 @@
 				<h2 class="text-4xl text-white font-semibold">Biome directory</h2>
 			</div>
 			<ul class="grid grid-cols-3 gap-6 mt-10">
-				{#each Array(18) as i}
-					<li><a href="#" class="text-xl font-semibold text-white">Biome #0277</a></li>
+				{#each Array(18).fill(1) as i}
+					<li><a href="/directory/{biome?.sitePath}/{i}" class="text-xl font-semibold text-white">Biome #{String(i).padStart(4, '0')}</a></li>
 				{/each}
 			</ul>
 		</div>
