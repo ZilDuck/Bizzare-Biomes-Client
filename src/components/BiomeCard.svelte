@@ -17,6 +17,7 @@
     
 
   export let biome:Biome
+  export let id:number
   export let imageText:string // TEMP WHILE CONTRACTS NOT UP
 
   $: image = ''
@@ -33,5 +34,7 @@
   })
 </script>
 
-<img src={image} alt="Loading biome" class="min-h-28 border border-[#495A7F]" />
+<a href='/directory/id/{id}'>
+  <img src={image} alt="Loading biome" class="min-h-28 border border-[#495A7F]" />
+</a>
 

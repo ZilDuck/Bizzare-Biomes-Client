@@ -53,7 +53,7 @@ import BiomeCard from '../components/BiomeCard.svelte'
 	<div class="max-w-screen-xl mx-auto">
 		{#each userBiomes as biome}
 			<div class="relative mb-5">
-				<BiomeCard biome={biome} />
+				<BiomeCard id={biome.id} biome={biome} />
 			</div>
 		{/each}
 	</div>
