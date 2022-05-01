@@ -26,7 +26,7 @@
 		<!-- desktop nav-->
 		<div class="max-w-screen-2xl w-full mx-auto hidden md:flex">
 			<div class="mx-2 self-center py-auto mr-12">
-				<Logo />
+				<a href="/"><Logo /></a>
 			</div>
 			<div class="ml-4 self-center flex">
 				<NavItem to="/" class="self-center">Home</NavItem>

@@ -3,7 +3,7 @@
 </script>
 
 <script lang="ts">
-import Footer from '../components/Footer.svelte';
+	import Footer from '../components/Footer.svelte';
 
 	import MintInfo from '../components/MintInfo.svelte';
 	import RecentlyMinted from '../components/RecentlyMinted.svelte';
@@ -26,47 +26,55 @@ import Footer from '../components/Footer.svelte';
 
 <section
 	class="flex flex-col justify-center items-center flex-1"
-	style="background: linear-gradient(180deg, #48597E 76.3%, #3477B7 100%) "
+	style="background: linear-gradient(180deg, #48597E 76.3%, #3477B7 100%)"
 >
-	<div class="max-w-screen-xl flex mx-auto justify-center items-center flex-col text-white my-16">
-		<h1 class="w-full font-black text-7xl mt-[230px]">Welcome to Bizarre Biomes.</h1>
-
-		<h2 class="mt-5 text-xl">An NFT project for duck holders, and newcomers alike.</h2>
-		<MintInfo class="mt-5" />
+	<div
+		class="max-w-screen-xl flex justify-center items-center flex-col text-white my-16 mx-auto px-5"
+	>
+		<h1 class="w-full font-black text-5xl sm:text-7xl mt-[160px] sm:mt-[230px] text-center">
+			Welcome to Bizarre Biomes.
+		</h1>
+		<h2 class="mt-5 text-xl text-center">An NFT project for duck holders, and newcomers alike.</h2>
+		<MintInfo class="mt-10 sm:mt-5" />
 	</div>
 </section>
 
 <img src={pineForest} alt="Pine Forest" />
 
 <section class="bg-[#50cf7d] py-28">
-	<div class="max-w-screen-xl mx-auto grid grid-cols-2 items-center">
-		<div>
+	<div class="max-w-screen-xl grid md:grid-cols-2 grid-cols-1 items-center mx-auto px-5">
+		<div class="px-5 sm:px-0">
 			<RecentlyMinted class="border-4 border-gray-700 rounded" />
 		</div>
-		<div class="px-28">
-			<h1 class="text-4xl mb-5 font-semibold text-white">
-				From the skyline to the pits of Mordor.
-			</h1>
-			<p class="font-normal text-base text-white">
-				Welcome to the newest project from the team behind Ducks and Zilkroad. A collection of 2000
-				different biomes.
-			</p>
-			<div class="flex flex-row my-5 gap-x-5">
-				<a href={'/mint'} class="btn btn-primary">Mint a new biome</a>
-				<button class="btn btn-secondary">View all biomes</button>
+		<div class="px-5 sm:px-0 mt-10 md:mt-0 w-full flex justify-center">
+			<div class="max-w-full md:max-w-[412px]">
+				<h1 class="text-4xl mb-5 font-semibold text-white">
+					From the skyline to the pits of Mordor.
+				</h1>
+				<p class="font-normal text-base text-white">
+					Welcome to the newest project from the team behind Ducks and Zilkroad. A collection of
+					2000 different biomes.
+				</p>
+				<div class="flex flex-row flex-wrap my-5 gap-x-5">
+					<a href={'/mint'} class="btn btn-primary">Mint a new biome</a>
+					<button class="btn btn-secondary">View all biomes</button>
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
 
-<img src={rocket} alt="rocket" class="bg-[#50cf7d]"/>
+<img src={rocket} alt="rocket" class="bg-[#50cf7d] max-w-full" />
 
-<div class="h-16" style="background: linear-gradient(180deg, #E6F1F2 0%, #CCEEF7 100%);" />
+<div
+	class="h-16 max-w-full"
+	style="background: linear-gradient(180deg, #E6F1F2 0%, #CCEEF7 100%);"
+/>
 
 <img src={shroomland} alt="shroomland" class="bg-[#CCEEF7]" />
 
-<section class="bg-[#A1A1E4]" >
-	<div class="max-w-screen-xl mx-auto py-28">
+<section class="bg-[#A1A1E4]">
+	<div class="max-w-screen-xl py-28 mx-auto px-5">
 		<div class="max-w-screen-xl flex mx-auto justify-center items-center flex-col text-white ">
 			<h1 class="font-semibold text-4xl max-w-[496px] text-center">
 				A title on the latest NFTs minted
@@ -84,7 +92,7 @@ import Footer from '../components/Footer.svelte';
 
 <img src={spikyRidge} alt="spiky ridge" class="bg-[#FCB698]" />
 <section style="background: #E4CF81;">
-	<div class="max-w-screen-xl mx-auto py-28 text-primary">
+	<div class="max-w-screen-xl py-28 text-primary mx-auto px-5">
 		<div class="max-w-screen-xl flex mx-auto justify-center items-center flex-col  ">
 			<h1 class="font-semibold text-4xl max-w-[496px] text-center">Frequently asked questions</h1>
 			<p class="mt-5 text-base max-w-[600px] text-center">
@@ -92,7 +100,7 @@ import Footer from '../components/Footer.svelte';
 				different worlds from the multiverse.
 			</p>
 		</div>
-		<div class="grid grid-cols-2 gap-6 mt-20">
+		<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-20">
 			{#each Array(7) as i}
 				<div>
 					<h2 class="font-semibold text-2xl">FAQ title.</h2>
@@ -111,8 +119,8 @@ import Footer from '../components/Footer.svelte';
 <img src={floatingIsland} alt="Floating island" class="bg=[#9DD380] w-full" />
 
 <section class="bg-[#9DD380]">
-	<div class="max-w-screen-xl mx-auto pt-28 text-primary">
-		<div class="max-w-screen-xl flex mx-auto justify-center items-center flex-col  ">
+	<div class="max-w-screen-xl mx-auto mt-[-1px] pt-28 text-primary">
+		<div class="max-w-screen-xl flex justify-center items-center flex-col mx-auto px-5">
 			<h1 class="font-semibold text-4xl text-white max-w-[496px] text-center">
 				A creation from the team behind Ducks.
 			</h1>
@@ -121,7 +129,7 @@ import Footer from '../components/Footer.svelte';
 				shown below.
 			</p>
 		</div>
-		<div class="grid grid-cols-4 gap-6 mt-20">
+		<div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-20 mx-auto px-5">
 			{#each Array(8) as i}
 				<div class="bg-[#90C772] flex flex-col items-center justify-center p-5">
 					<img src={duck1} alt="Floating island" class="max-w-[100%] mb-5" />
@@ -133,4 +141,3 @@ import Footer from '../components/Footer.svelte';
 	</div>
 	<Footer />
 </section>
-
