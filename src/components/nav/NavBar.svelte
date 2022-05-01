@@ -24,7 +24,7 @@
       "
 	>
 		<!-- desktop nav-->
-		<div class="max-w-screen-2xl w-full mx-auto hidden md:flex">
+		<div class="max-w-screen-2xl w-full mx-auto hidden lg:flex">
 			<div class="mx-2 self-center py-auto mr-12">
 				<a href="/"><Logo /></a>
 			</div>
@@ -44,11 +44,11 @@
 
 		<!-- end desktop nav-->
 
-		<div class="container mx-auto flex md:hidden">
+		<div class="container mx-auto flex lg:hidden">
 			<div class="mr-2 self-center py-auto">
 				<Logo />
 			</div>
-			<div class="md:hidden flex ml-auto p-4">
+			<div class="flex ml-auto p-4">
 				<Burger bind:open={sidebar} class="text-white inline-flex" />
 			</div>
 		</div>

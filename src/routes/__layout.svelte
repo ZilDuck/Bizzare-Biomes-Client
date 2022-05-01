@@ -6,7 +6,7 @@
 </script>
 
 <div>
-	<div class="z-[1000] flex max-w-screen">
+	<div class="absolute z-[2] flex max-w-screen w-full h-full">
 		<SideBar bind:open />
 	</div>
 	<NavBar bind:sidebar={open} />
