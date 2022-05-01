@@ -4,34 +4,33 @@
 
 <script lang="ts">
 	import { worldLevelBiomes } from '../../store/biomes';
-	let arctic = '/assets/foregrounds/Arctic.png'
-	import {page} from '$app/stores'
+	let arctic = '/assets/foregrounds/Arctic.png';
+	import { page } from '$app/stores';
 	import Discord from '../../components/icons/Discord.svelte';
 	import Twitter from '../../components/icons/Twitter.svelte';
 	import Telegram from '../../components/icons/Telegram.svelte';
-	
-	const currentPage = $page.url.pathname.split('/directory/')[1]
-	const biome = $worldLevelBiomes.find(biome => biome.sitePath === currentPage)
+
+	const currentPage = $page.url.pathname.split('/directory/')[1];
+	const biome = $worldLevelBiomes.find((biome) => biome.sitePath === currentPage);
 
 	$: topColor = biome?.topColour;
 	$: mainColor = biome?.bottomColour;
-	console.log(biome)
+	console.log(biome);
 </script>
 
 <svelte:head>
 	<title>Home</title>
 </svelte:head>
 
-<div class="h-[150px]" style="background-color: {topColor};"/>
+<div class="h-[150px]" style="background-color: {topColor};" />
 
 <div class="relative w-full">
 	<img src={arctic} alt="Arctic" class="bg-transparent absolute" />
 	<img src={biome?.imagePath} alt="Arctic" class=" bg-transparent" />
 </div>
 <section class="pb-10 bg-[#EEF5F7]">
-
 	<div
-		class="max-w-screen-xl flex mx-auto justify-center items-center flex-col text-primary  mb-[120px] "
+		class="max-w-screen-xl flex justify-center items-center flex-col text-primary mb-[120px] mx-auto px-5"
 	>
 		<h1 class="w-full font-black text-[72px]  text-center">{biome?.name}</h1>
 		<p class="mt-5 text-xl">An NFT project for duck holders, and newcomers alike.</p>
@@ -42,19 +41,18 @@
 			<div class="w-full border-b-[1px] border-b-[#647FBB] pb-10 mb-10">
 				<h2 class="text-4xl text-white font-semibold">Biome directory</h2>
 			</div>
-			<ul class="grid grid-cols-3 gap-6 mt-10">
+			<ul class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
 				{#each Array(18) as i}
 					<li><a href="#" class="text-xl font-semibold text-white">Biome #0277</a></li>
 				{/each}
 			</ul>
 		</div>
 	</div>
-	
 
-	<div class="max-w-screen-xl mx-auto grid grid-cols-2 items-center mb-20">
+	<div class="max-w-screen-xl grid grid-cols-2 items-center mb-20 mx-auto px-5">
 		<div>
 			<h1 class="text-4xl mb-5 font-semibold text-[#495A7F]">Join the discord.</h1>
-			<p class="font-normal text-base text-[#495A7F]">
+			<p class="font-normal text-base text-[#21252c]">
 				Join the discord and connect with the rest of the community. Here you will find duck lovers,
 				as well as our new biome holders. A friendly place to connect with others.
 			</p>
@@ -98,7 +96,7 @@
 					<Twitter class="text-primary" />
 				</li>
 				<li class="mr-5">
-					<Telegram class="text-primary"/>
+					<Telegram class="text-primary" />
 				</li>
 			</ul>
 		</div>
