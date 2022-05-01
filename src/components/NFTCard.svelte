@@ -1,5 +1,5 @@
 <script lang="ts">
-import { onMount } from "svelte";
+    import { onMount } from "svelte";
     type NFT = {
         contract:string,
         name:string,
@@ -34,13 +34,11 @@ import { onMount } from "svelte";
                 image = resolveIPFS(nft.metadata?.image)
             }
         } else if (nft.type == 'ZRC6') {
-            if (nft.metadata && nft.metadata.resources) {
-                let rsrcs = nft.metadata.resources
-                image = resolveIPFS(rsrcs!.find((x:any) => x.uri).uri || '') || ''
-            }
+            image = `https://cdn.zildexr.com/${nft.contract}/${nft.tokenId}?optimizer=image&width=400`
         } else {
-            image = ''
+            image = `https://cdn.zildexr.com/${nft.contract}/${nft.tokenId}?optimizer=image&width=400`
         }
+     
         id = nft.tokenId
         collection = nft.name
     })
@@ -48,7 +46,7 @@ import { onMount } from "svelte";
 
 <div class="flex flex-col mb-5">
     <img src={image} alt="Nft" class="mb-5 rounded-lg bg-white bg-opacity-10 aspect-square" />
-    <h3 class="text-[#495A7F] text-xl mb-[10px] font-semibold">{id}</h3>
+    <h3 class="text-[#495A7F] text-xl mb-[10px] font-semibold">#{id}</h3>
     <p class="text-[#495A7F]">{collection}</p>
 </div>
 
