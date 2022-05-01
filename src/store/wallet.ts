@@ -39,7 +39,6 @@ const createWalletStore = () => {
   }
 
   const connect = async () => {
-    console.log('connect')
     const { wallet } = window.zilPay
 
     const wasConnectionSuccessful = await wallet.connect()

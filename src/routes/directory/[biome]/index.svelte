@@ -58,7 +58,7 @@
 				{#if biomesList}
 					{#each biomesList as i}
 						<li>
-							<a href="/directory/{biome?.sitePath}/{i.id}" class="text-xl font-semibold text-white"
+							<a href="/directory/id/{i.id}" class="text-xl font-semibold text-white"
 								>{biome?.name} #{String(i.id).padStart(4, '0')}</a
 							>
 						</li>
