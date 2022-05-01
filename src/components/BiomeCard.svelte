@@ -1,40 +1,39 @@
-
-
-
 <script lang="ts">
-  import { onMount } from "svelte";
-  type Biome = {
-    owner:string,
-    id:number,
-    data: {
-        attributes:[],
-        resources:[{
-          uri:string
-        }]
-      }
-    }
-  
-    
+	import { onMount } from 'svelte';
+	type Biome = {
+		owner: string;
+		id: number;
+		data: {
+			attributes: [];
+			resources: [
+				{
+					uri: string;
+				}
+			];
+		};
+	};
 
-  export let biome:Biome
-  export let id:number
-  export let imageText:string // TEMP WHILE CONTRACTS NOT UP
+	export let biome: Biome;
+	export let id: number;
+	export let imageText: string; // TEMP WHILE CONTRACTS NOT UP
 
-  $: image = ''
+	$: image = '';
 
-  onMount(() => {
-      const resolveIPFS = (ipfs:string):string => {
-          if (!ipfs.toLowerCase().startsWith('ipfs')) return ipfs
-          return `https://cloudflare-ipfs.com/ipfs/${ipfs.split('ipfs://')[1]}`
-      }
-      
-      if (biome) image = resolveIPFS(biome.data!.resources![0]!.uri)
-      if (imageText) image = resolveIPFS(imageText)
+	onMount(() => {
+		const resolveIPFS = (ipfs: string): string => {
+			if (!ipfs.toLowerCase().startsWith('ipfs')) return ipfs;
+			return `https://cloudflare-ipfs.com/ipfs/${ipfs.split('ipfs://')[1]}`;
+		};
 
-  })
+		if (biome) image = resolveIPFS(biome.data!.resources![0]!.uri);
+		if (imageText) image = resolveIPFS(imageText);
+	});
 </script>
 
-<a href='/directory/id/{id}'>
-  <img src={image} alt="Loading biome" class="min-h-28 border border-[#495A7F]" />
+<a href="/directory/id/{id}">
+	<img
+		src={image}
+		alt="Loading biome"
+		class="min-h-28 border border-[#495A7F] min-h-[200px] w-full"
+	/>
 </a>
-

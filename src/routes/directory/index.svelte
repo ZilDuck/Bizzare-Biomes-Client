@@ -29,7 +29,7 @@
 				<a href="/directory/{biome.sitePath}">
 					<div class="relative mb-5">
 						<h2
-							class="text-white font-bold text-[40px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
+							class="text-white font-bold text-[24px] md:text-[40px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
 						>
 							{biome.name}
 						</h2>
