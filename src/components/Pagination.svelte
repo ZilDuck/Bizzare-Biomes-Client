@@ -15,7 +15,7 @@
   
     $: numberShowlist = getVisiblePagesArray(currentPage, numPages)
     $: numberElipsisList = getPagesThatShowElipsis(currentPage, numPages)
-    $: console.log(numberElipsisList)
+ 
   
     function getPagesThatShowElipsis(currentPage: number, numPages: number) {
       if (numPages < 7) {

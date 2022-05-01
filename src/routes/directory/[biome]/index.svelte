@@ -57,15 +57,11 @@
 			<ul class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
 				{#if biomesList}
 					{#each biomesList as i}
-<<<<<<< HEAD
-						<li><a href="/directory/id/{i.id}" class="text-xl font-semibold text-white">{biome?.name} #{String(i.id).padStart(4, '0')}</a></li>
-=======
 						<li>
-							<a href="/directory/{biome?.sitePath}/{i.id}" class="text-xl font-semibold text-white"
+							<a href="/directory/id/{i.id}" class="text-xl font-semibold text-white"
 								>{biome?.name} #{String(i.id).padStart(4, '0')}</a
 							>
 						</li>
->>>>>>> f51bd92c4b59588d0a6ca5da6230e3fc10b2eb99
 					{/each}
 				{/if}
 			</ul>
