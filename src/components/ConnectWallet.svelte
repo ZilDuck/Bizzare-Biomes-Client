@@ -1,4 +1,6 @@
 <script lang="ts">
+import { goto } from '$app/navigation';
+
   import wallet from '../store/wallet'
 
   $: truncatedWallet = $wallet.bech32
@@ -6,6 +8,7 @@
     : false
 
   function handleWallet() {
+    if ($wallet.isConnected) goto('/your-biomes')
 		wallet.connect()
   }
 </script>

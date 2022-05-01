@@ -3,13 +3,33 @@
 </script>
 
 <script lang="ts">
-	import Footer from '../components/Footer.svelte';
+	import Footer from '../components/Footer.svelte'
+	import wallet from '../store/wallet'
+	import { onDestroy, onMount } from 'svelte'
+	import API from '../api'
+import BiomeCard from '../components/BiomeCard.svelte'
+	let nightSky = '/assets/backgrounds/Night sky.png'
+	let comp1 = '/assets/compositions/1.png'
 
-	// Backgrounds
-	let nightSky = '/assets/backgrounds/Night sky.png';
 
-	// Comps
-	let comp1 = '/assets/compositions/1.png';
+  $: truncatedWallet = $wallet.bech32
+    ? `${$wallet.bech32.slice(0, 6)}...${$wallet.bech32.slice(-6)}`
+    : false
+
+	let userBiomes:any[] = []
+
+	const getBiomes = async (x:string) => {
+		userBiomes = await API.get(`biomes/holder/${x}`)
+	}
+
+	const unsubscribe = wallet.subscribe(value => {
+		if (value.base16) {
+			getBiomes(value.base16)
+		}
+	})
+
+	onDestroy(unsubscribe)
+
 </script>
 
 <svelte:head>
@@ -24,16 +44,16 @@
 		<h1 class="w-full font-black text-7xl mt-[230px] mb-5">Your biomes</h1>
 		<div class="flex items-center">
 			<div class="w-[40px] h-[40px] bg-white rounded-[100%] mr-5" />
-			<p class="text-white">Owned by <a href="#" class="underline">zil16wg79q...</a></p>
+			<p class="text-white">Owned by <a href="#" class="underline">{truncatedWallet}</a></p>
 		</div>
 	</div>
 </section>
 
 <section class="bg-[#447197]">
 	<div class="max-w-screen-xl mx-auto">
-		{#each Array(4) as i}
+		{#each userBiomes as biome}
 			<div class="relative mb-5">
-				<img src={comp1} alt="Loading biome" class="min-h-28 border border-[#495A7F]" />
+				<BiomeCard biome={biome} />
 			</div>
 		{/each}
 	</div>

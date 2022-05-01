@@ -6,7 +6,7 @@
 	import Footer from '../../components/Footer.svelte';
 	import HeroContent from '../../components/HeroContent.svelte';
 	import { worldLevelBiomes } from '../../store/biomes';
-	const floatingIsland = '/assets/backgrounds/floating-islands.png';
+	const floatingIsland = '/assets/backgrounds/Floating islands WIP.png';
 </script>
 
 <svelte:head>

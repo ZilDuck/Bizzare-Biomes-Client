@@ -1,21 +1,34 @@
-<script context="module" lang="ts">
-	export const prerender = true;
+<script context="module">
+	export async function load({ params, fetch }) {
+		const { biome } = params;
+		const biomePath = biome;
+		const biomesList = await API.get(`biomes/${biomePath}`);
+
+		console.table(biomesList);
+		console.log(biomePath);
+
+		return {
+			props: {
+				biomePath,
+				biomesList
+			}
+		};
+	}
 </script>
 
 <script lang="ts">
-	import { worldLevelBiomes } from '../../store/biomes';
+	import API from '../../../api';
+	import { worldLevelBiomes } from '../../../store/biomes';
+	import Discord from '../../../components/icons/Discord.svelte';
+	import Twitter from '../../../components/icons/Twitter.svelte';
+	import Telegram from '../../../components/icons/Telegram.svelte';
 	let arctic = '/assets/foregrounds/Arctic.png';
-	import { page } from '$app/stores';
-	import Discord from '../../components/icons/Discord.svelte';
-	import Twitter from '../../components/icons/Twitter.svelte';
-	import Telegram from '../../components/icons/Telegram.svelte';
 
-	const currentPage = $page.url.pathname.split('/directory/')[1];
-	const biome = $worldLevelBiomes.find((biome) => biome.sitePath === currentPage);
+	export let biomePath: string;
+	export let biomesList: any[];
 
+	const biome = $worldLevelBiomes.find((biome) => biome.sitePath === biomePath);
 	$: topColor = biome?.topColour;
-	$: mainColor = biome?.bottomColour;
-	console.log(biome);
 </script>
 
 <svelte:head>
@@ -42,9 +55,15 @@
 				<h2 class="text-4xl text-white font-semibold">Biome directory</h2>
 			</div>
 			<ul class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
-				{#each Array(18) as i}
-					<li><a href="#" class="text-xl font-semibold text-white">Biome #0277</a></li>
-				{/each}
+				{#if biomesList}
+					{#each biomesList as i}
+						<li>
+							<a href="/directory/{biome?.sitePath}/{i.id}" class="text-xl font-semibold text-white"
+								>{biome?.name} #{String(i.id).padStart(4, '0')}</a
+							>
+						</li>
+					{/each}
+				{/if}
 			</ul>
 		</div>
 	</div>

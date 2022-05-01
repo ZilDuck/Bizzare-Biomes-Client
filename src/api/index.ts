@@ -2,11 +2,14 @@
 
 const baseURL:string = 'http://localhost:4000' 
 
-type endPoints = 'biomes-list'|'biomes'
+type endPoints = 'biomes-list'|'biomes'|string
 
 
 
-const get = async (point: endPoints) => fetch(`${baseURL}/${point}`)
+const get = async (point: endPoints) => {
+  const res = fetch(`${baseURL}/${point}`)
+  return (await res).json()
+} 
 
 const API ={
   get

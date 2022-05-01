@@ -56,7 +56,7 @@
 					2000 different biomes.
 				</p>
 				<div class="flex flex-row flex-wrap my-5 gap-x-5">
-					<button class="btn btn-primary">Mint a new biome</button>
+					<a href={'/mint'} class="btn btn-primary">Mint a new biome</a>
 					<button class="btn btn-secondary">View all biomes</button>
 				</div>
 			</div>
