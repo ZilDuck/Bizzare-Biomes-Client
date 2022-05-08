@@ -3,7 +3,10 @@
 	export let open = false;
 	import ConnectWallet from '../ConnectWallet.svelte';
 	import NavItem from './NavItem.svelte';
-	const closeSidebar = () => (open = false);
+	const closeSidebar = () => {
+		console.log('close sidbar')
+		open = false
+	}
 </script>
 
 {#if open}
