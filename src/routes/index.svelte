@@ -16,8 +16,8 @@
 	let floatingIsland = '/assets/compositions/1.png';
 
 	// Ducks
-	let duck1 = 'src/assets/ducks/1.png';
-	let duck2 = 'src/assets/foregrounds/2.png';
+	let duck1 = '/assets/ducks/1.png';
+
 </script>
 
 <svelte:head>
