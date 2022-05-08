@@ -38,7 +38,7 @@
         } else {
             image = `https://cdn.zildexr.com/${nft.contract}/${nft.tokenId}?optimizer=image&width=400`
         }
-     
+        image = `https://cdn.zildexr.com/${nft.contract}/${nft.tokenId}?optimizer=image&width=400`
         id = nft.tokenId
         collection = nft.name
     })

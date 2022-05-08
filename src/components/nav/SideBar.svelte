@@ -16,7 +16,6 @@
 				<NavItem on:click={closeSidebar} to="/" class="self-center">Home</NavItem>
 				<NavItem on:click={closeSidebar} to="/directory" class="self-center">Biomes</NavItem>
 				<NavItem on:click={closeSidebar} to="/mint" class="self-center">Mint</NavItem>
-				<NavItem on:click={closeSidebar} to="/marketplace" class="self-center">Marketplace</NavItem>
 				<ConnectWallet on:click={closeSidebar} />
 			</nav>
 		</aside>

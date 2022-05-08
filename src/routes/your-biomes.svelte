@@ -44,7 +44,7 @@ import BiomeCard from '../components/BiomeCard.svelte'
 		<h1 class="w-full font-black text-7xl mt-[230px] mb-5">Your biomes</h1>
 		<div class="flex items-center">
 			<div class="w-[40px] h-[40px] bg-white rounded-[100%] mr-5" />
-			<p class="text-white">Owned by <a href="#" class="underline">{truncatedWallet}</a></p>
+			<p class="text-white">Owned by <a href="https://viewblock.io/zilliqa/address/{$wallet.bech32}" target="_blank" class="underline">{truncatedWallet}</a></p>
 		</div>
 	</div>
 </section>

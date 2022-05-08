@@ -33,7 +33,7 @@
 						>
 							{biome.name}
 						</h2>
-						<img src={biome.imagePath} alt="Loading biome" class="min-h-28" />
+						<img src={biome.imagePath} alt="Loading biome" class="min-h-28 " />
 					</div>
 				</a>
 			{/each}

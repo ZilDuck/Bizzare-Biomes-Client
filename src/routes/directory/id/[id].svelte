@@ -15,11 +15,6 @@
 		const nftImage = metadata.data.resources[0].uri;
 		const biomeName = metadata.data.attributes[0].value;
 
-		console.table(metadata);
-		console.table(ownedNFTs);
-		console.log(truncatedWallet);
-		console.log(nftImage);
-
 		return {
 			props: {
 				biomeName,
@@ -142,7 +137,7 @@
 			</div>
 			<div class="flex items-center">
 				<div class="w-[40px] h-[40px] bg-[#495A7F] rounded-[100%] mr-5" />
-				<p class="text-[#495A7F]">Owned by <a href="#" class="underline">{truncatedWallet}</a></p>
+				<p class="text-[#495A7F]">Owned by <a href="https://viewblock.io/zilliqa/address/{metadata.bech32}" target="_blank" class="underline">{truncatedWallet}</a></p>
 			</div>
 		</div>
 		<div class="flex items-center mt-5 mb-[120px]">
@@ -159,7 +154,7 @@
 			class="flex flex-col max-w-screen-xl mx-5 mt-5 space-y-12 xl:mx-auto md:grid md:grid-cols-2 md:space-y-0 md:gap-6 lg:grid-cols-3 xl:grid-cols-4"
 		>
 			<h2 class="md:col-span-2 lg:col-span-3 xl:col-span-4 text-[#495A7F] font-semibold text-2xl">
-				<a href="#" class="underline">{truncatedWallet}</a>’s owned NFTs
+				<a href="https://viewblock.io/zilliqa/address/{metadata.bech32}" target="_blank" class="underline">{truncatedWallet}</a>’s owned NFTs
 			</h2>
 			<h2 class="text-[#495A7F] mt-10 text-xl md:col-span-2 lg:col-span-3 xl:col-span-4">
 				Showing <span class="text-black"
