@@ -18,6 +18,11 @@
 	// Ducks
 	let duck1 = '/assets/ducks/1.png';
 
+	// NFTs
+	let ducknft = '/assets/nfts/duck.png';
+	let demons = '/assets/nfts/demons.png';
+	let beanterra = '/assets/nfts/beanterra.png';
+	let soulless = '/assets/nfts/soulless.png';
 </script>
 
 <svelte:head>
@@ -48,7 +53,7 @@
 		</div>
 		<div class="px-5 sm:px-0 mt-10 md:mt-0 w-full flex justify-center">
 			<div class="max-w-full md:max-w-[412px]">
-				<h1 class="text-4xl mb-5 font-semibold text-white">
+				<h1 class="text-3xl md:text-4xl mb-5 font-semibold text-white">
 					From the skyline to the pits of Mordor.
 				</h1>
 				<p class="font-normal text-base text-white">
@@ -65,18 +70,46 @@
 </section>
 
 <img src={rocket} alt="rocket" class="bg-[#50cf7d] max-w-full" />
-
 <div
 	class="h-16 max-w-full"
 	style="background: linear-gradient(180deg, #E6F1F2 0%, #CCEEF7 100%);"
 />
+
+<section class="bg-[#CCEEF7] pb-20 md:pb-[120px]">
+	<div class="max-w-screen-xl mx-auto mt-[-1px] pt-28 text-primary">
+		<div class="max-w-screen-xl flex justify-center items-center flex-col mx-auto px-5">
+			<h1 class="font-semibold text-3xl  md:text-4xl  max-w-[1016px] text-center">
+				It’s finally time to view the NFTs in your wallet. By owning a Bizarre Biome, you can
+				finally view your owned NFTs.
+			</h1>
+			<p class="mt-5 text-base max-w-[600px] text-center ">
+				A feature that is exclusive to Bizarre Biome’s. You can now see every NFT that you own. This
+				includes both ZRC-1* and ZRC-6 based NFTs.
+			</p>
+		</div>
+		<div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-20 mx-auto px-5">
+			<div class="bg-transparent flex flex-col items-center justify-center rounded-lg">
+				<img src={ducknft} alt="Floating island" class="max-w-[100%]" />
+			</div>
+			<div class="bg-transparent flex flex-col items-center justify-center rounded-lg">
+				<img src={soulless} alt="Floating island" class="max-w-[100%]" />
+			</div>
+			<div class="bg-transparent flex flex-col items-center justify-center rounded-lg">
+				<img src={beanterra} alt="Floating island" class="max-w-[100%]" />
+			</div>
+			<div class="bg-transparent flex flex-col items-center justify-center rounded-lg">
+				<img src={demons} alt="Floating island" class="max-w-[100%]" />
+			</div>
+		</div>
+	</div>
+</section>
 
 <img src={shroomland} alt="shroomland" class="bg-[#CCEEF7]" />
 
 <section class="bg-[#A1A1E4]">
 	<div class="max-w-screen-xl py-28 mx-auto px-5">
 		<div class="max-w-screen-xl flex mx-auto justify-center items-center flex-col text-white ">
-			<h1 class="font-semibold text-4xl max-w-[496px] text-center">
+			<h1 class="font-semibold text-3xl  md:text-4xl max-w-[496px] text-center">
 				A title on the latest NFTs minted
 			</h1>
 			<p class="mt-5 text-base max-w-[600px] text-center">
@@ -94,7 +127,9 @@
 <section style="background: #E4CF81;">
 	<div class="max-w-screen-xl py-28 text-primary mx-auto px-5">
 		<div class="max-w-screen-xl flex mx-auto justify-center items-center flex-col  ">
-			<h1 class="font-semibold text-4xl max-w-[496px] text-center">Frequently asked questions</h1>
+			<h1 class="font-semibold text-3xl  md:text-4xl max-w-[496px] text-center">
+				Frequently asked questions
+			</h1>
 			<p class="mt-5 text-base max-w-[600px] text-center">
 				Welcome to the newest project from the team behind Ducks and Zilkroad. A collection of 2000
 				different worlds from the multiverse.
@@ -121,7 +156,7 @@
 <section class="bg-[#9DD380]">
 	<div class="max-w-screen-xl mx-auto mt-[-1px] pt-28 text-primary">
 		<div class="max-w-screen-xl flex justify-center items-center flex-col mx-auto px-5">
-			<h1 class="font-semibold text-4xl text-white max-w-[496px] text-center">
+			<h1 class="font-semibold text-3xl  md:text-4xl text-white max-w-[496px] text-center">
 				A creation from the team behind Ducks.
 			</h1>
 			<p class="mt-5 text-base max-w-[600px] text-center text-white">
