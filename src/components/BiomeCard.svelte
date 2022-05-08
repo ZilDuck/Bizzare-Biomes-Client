@@ -34,6 +34,6 @@
 	<img
 		src={image}
 		alt="Loading biome"
-		class="min-h-28 border border-[#495A7F] min-h-[200px] w-full"
+		class="{$$restProps.class} md:min-h-[200px] border border-[#495A7F]  w-full"
 	/>
 </a>

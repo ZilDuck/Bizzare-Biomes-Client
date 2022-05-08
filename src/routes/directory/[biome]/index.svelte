@@ -68,7 +68,7 @@
 		</div>
 	</div>
 
-	<div class="max-w-screen-xl grid grid-cols-2 items-center mb-20 mx-auto px-5">
+	<div class="max-w-screen-xl grid grid-cols-1 sm:grid-cols-2 items-center mb-20 mx-auto px-5">
 		<div>
 			<h1 class="text-4xl mb-5 font-semibold text-[#495A7F]">Join the discord.</h1>
 			<p class="font-normal text-base text-[#21252c]">
@@ -81,7 +81,7 @@
 		</div>
 	</div>
 	<hr class="border-b-[1px] border-t-0 border-[rgba(0,0,0,0.1)] bg-transparent" />
-	<div class="max-w-screen-xl mx-auto grid grid-cols-4 gap-6 my-20">
+	<div class="max-w-screen-xl grid grid-cols-2 sm:grid-cols-4 gap-6 my-20 mx-auto px-5">
 		<div>
 			<h2 class="font-semibold mb-5 text-[#495A7F]">Team</h2>
 			<ul>
@@ -121,7 +121,7 @@
 		</div>
 	</div>
 	<hr class="border-b-[1px] border-t-0 border-[rgba(0,0,0,0.1)] bg-transparent" />
-	<div class="max-w-screen-xl mx-auto">
+	<div class="max-w-screen-xl mx-auto px-5">
 		<p class="text-[#495A7F] mt-10">© 2021 - Bizarre Biomes.</p>
 	</div>
 </section>
