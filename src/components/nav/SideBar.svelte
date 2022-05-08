@@ -16,7 +16,7 @@
 				<NavItem on:close={closeSidebar} to="/" class="self-center">Home</NavItem>
 				<NavItem on:close={closeSidebar} to="/directory" class="self-center">Biomes</NavItem>
 				<NavItem on:close={closeSidebar} to="/mint" class="self-center">Mint</NavItem>
-				<ConnectWallet />
+				<ConnectWallet on:close={closeSidebar} />
 			</nav>
 		</aside>
 	</div>

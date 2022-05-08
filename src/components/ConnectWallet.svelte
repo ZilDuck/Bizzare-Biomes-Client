@@ -1,16 +1,22 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
-
-	import wallet from '../store/wallet';
+	import { goto } from '$app/navigation'
+	import { createEventDispatcher } from 'svelte'
+	import wallet from '../store/wallet'
+	const dispatch = createEventDispatcher()
 
 	$: truncatedWallet = $wallet.bech32
 		? `${$wallet.bech32.slice(0, 6)}...${$wallet.bech32.slice(-6)}`
 		: false;
 
 	function handleWallet() {
-		if ($wallet.isConnected) goto('/your-biomes');
+		if ($wallet.isConnected) {
+			closeSidebar()
+			goto('/your-biomes');
+		}
+		
 		wallet.connect();
 	}
+	const closeSidebar = () => (dispatch('close'))
 </script>
 
 <div class="relative">
