@@ -23,6 +23,34 @@
 	let demons = '/assets/nfts/demons.png';
 	let beanterra = '/assets/nfts/beanterra.png';
 	let soulless = '/assets/nfts/soulless.png';
+
+	// Team details
+	const team = [
+		{
+			name: 'Nines',
+			role: 'Developer'
+		},
+		{
+			name: 'Bucko',
+			role: 'Artist'
+		},
+		{
+			name: '50Cal',
+			role: 'Designer'
+		},
+		{
+			name: 'Badman',
+			role: 'Developer'
+		},
+		{
+			name: 'Nicfusc',
+			role: 'Developer'
+		},
+		{
+			name: 'Prodpeak',
+			role: 'Developer'
+		}
+	];
 </script>
 
 <svelte:head>
@@ -164,12 +192,12 @@
 				shown below.
 			</p>
 		</div>
-		<div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-20 mx-auto px-5">
-			{#each Array(8) as i}
+		<div class="grid grid-cols-2 sm:grid-cols-3 gap-6 mt-20 mx-auto px-5">
+			{#each team as teamMember}
 				<div class="bg-[#90C772] flex flex-col items-center justify-center p-5">
 					<img src={duck1} alt="Floating island" class="max-w-[100%] mb-5" />
-					<h3 class="text-white text-xl mb-[10px] font-semibold">Nines</h3>
-					<p class="text-white">Developer</p>
+					<h3 class="text-white text-xl mb-[10px] font-semibold">{teamMember.name}</h3>
+					<p class="text-white">{teamMember.role}</p>
 				</div>
 			{/each}
 		</div>

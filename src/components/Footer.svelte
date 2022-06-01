@@ -15,7 +15,7 @@
 				as well as our new biome holders. A friendly place to connect with others.
 			</p>
 			<div class="flex flex-row my-5 gap-x-5">
-				<button class="btn btn-primary">Join the discord</button>
+				<a class="btn btn-primary" href="https://discord.gg/xBy4PfQ3SZ">Join the discord</a>
 			</div>
 		</div>
 	</div>
