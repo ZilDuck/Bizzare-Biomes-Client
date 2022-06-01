@@ -108,7 +108,7 @@
 		<div class="max-w-screen-xl flex justify-center items-center flex-col mx-auto px-5">
 			<h1 class="font-semibold text-3xl  md:text-4xl  max-w-[1016px] text-center">
 				It’s finally time to view the NFTs in your wallet. By owning a Bizarre Biome, you can
-				finally view your owned NFTs.
+				 view your owned NFTs.
 			</h1>
 			<p class="mt-5 text-base max-w-[600px] text-center ">
 				A feature that is exclusive to Bizarre Biome’s. You can now see every NFT that you own. This

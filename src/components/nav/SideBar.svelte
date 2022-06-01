@@ -3,7 +3,7 @@
 	export let open = false;
 	import ConnectWallet from '../ConnectWallet.svelte';
 	import NavItem from './NavItem.svelte';
-	const closeSidebar = () => (open = false);
+	const closeSidebar = () => (open = false)
 </script>
 
 {#if open}
@@ -13,10 +13,10 @@
 			transition:slide
 		>
 			<nav class="p-10 text-xl flex flex-col space-y-4 mt-4">
-				<NavItem on:click={closeSidebar} to="/" class="self-center">Home</NavItem>
-				<NavItem on:click={closeSidebar} to="/directory" class="self-center">Biomes</NavItem>
-				<NavItem on:click={closeSidebar} to="/mint" class="self-center">Mint</NavItem>
-				<ConnectWallet on:click={closeSidebar} />
+				<NavItem on:close={closeSidebar} to="/" class="self-center">Home</NavItem>
+				<NavItem on:close={closeSidebar} to="/directory" class="self-center">Biomes</NavItem>
+				<NavItem on:close={closeSidebar} to="/mint" class="self-center">Mint</NavItem>
+				<ConnectWallet on:close={closeSidebar} />
 			</nav>
 		</aside>
 	</div>
