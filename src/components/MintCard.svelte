@@ -1,13 +1,30 @@
 <script lang="ts">
 	import ProgressBar from './ProgressBar.svelte';
   import walletStore from '../store/wallet'
+  import getCurrentMintCount from '../store/blockchain'
+  import { onMount } from 'svelte';
 
     let mintTime = '01/01/2022, 10:00AM GMT'
-    let mintCount = 3000
+    let maxMintCount = 3000
+    var currentlyMintCount = fetchCurrentMintCount()
     let mintPrice = 2000
     let currentMinted = 0 // TODO
     let currentMintCount = 1;
 
+	// onMount(() => {
+	// 	async function fetchCurrentMintCount() {
+	// 		currentlyMintCount = await getCurrentMintCount();
+	// 	}
+	// 	fetchCurrentMintCount();
+	// })
+	async function fetchCurrentMintCount() {
+		let count = await getCurrentMintCount()
+			.catch((error) => {
+				console.log(error)
+			})
+			.then((r) => r)
+		return count
+	}
 
 function handleDecrease() {
     if (currentMintCount <= 1) {
@@ -18,7 +35,7 @@ function handleDecrease() {
 }
 
 function handleIncrease() {
-    if (currentMintCount > mintCount - currentMinted) {
+    if (currentMintCount > maxMintCount - currentMinted) {
         return;
     } else {
         currentMintCount++;
@@ -41,9 +58,13 @@ async function MintTokens(){
 				<h6 class="text-gray-300 font-semibold text-base">Mint time</h6>
 				<h5 class="text-gray-700 font-normal text-base">{mintTime}</h5>
 			</div>
+      <div class="flex flex-col gap-1 pr-5 mr-5 border-r border-gray-200">
+				<h6 class="text-gray-300 font-semibold text-base">Currently mint</h6>
+				<h5 class="text-gray-700 font-normal text-base">{currentlyMintCount}</h5>
+			</div>
 			<div class="flex flex-col gap-1 pr-5 mr-5 border-r border-gray-200">
-				<h6 class="text-gray-300 font-semibold text-base">Mint count</h6>
-				<h5 class="text-gray-700 font-normal text-base">{mintCount}</h5>
+				<h6 class="text-gray-300 font-semibold text-base">Max mint</h6>
+				<h5 class="text-gray-700 font-normal text-base">{maxMintCount}</h5>
 			</div>
 			<div class="flex flex-col gap-1">
 				<h6 class="text-gray-300 font-semibold text-base">Mint price</h6>
@@ -52,8 +73,8 @@ async function MintTokens(){
 		</div>
 
 		<div class="border-t border-b gap-x-[20px] border-gray-100 flex flex-row py-[20px]">
-			<p class="font-normal text-base text-gray-700 shrink-0">{currentMinted} / {mintCount}</p>
-			<ProgressBar current={currentMinted} total={mintCount} class="w-full self-center" />
+			<p class="font-normal text-base text-gray-700 shrink-0">{currentMinted} / {maxMintCount}</p>
+			<ProgressBar current={currentMinted} total={maxMintCount} class="w-full self-center" />
 		</div>
 
 		<div class="py-[20px] flex gap-5">
@@ -70,7 +91,7 @@ async function MintTokens(){
 			>
 			<button
 				on:click={handleIncrease}
-				disabled={currentMintCount >= mintCount - currentMinted}
+				disabled={currentMintCount >= maxMintCount - currentMinted}
 				class="btn btn-primary">+</button
 			>
 		</div>

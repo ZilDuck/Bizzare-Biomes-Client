@@ -61,6 +61,7 @@ const createWalletStore = () => {
       nonce: w.nonce! + 1
     }))
   }
+  
 
   const fetchNonce = async () => {
     const { blockchain } = window.zilPay
@@ -133,7 +134,6 @@ return tx
     fetchNonce,
     mintVouchers
   }
-
   
 }
 

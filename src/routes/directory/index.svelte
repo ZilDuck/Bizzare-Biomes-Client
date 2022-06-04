@@ -24,7 +24,7 @@
 
 <section class="bg-[#FDC3CB]">
 	{#if $worldLevelBiomes}
-		<div class="max-w-screen-xl mx-auto px-5">
+	<div class="grid grid-rows-6 grid-flow-col gap-40 pl-40 pr-40">
 			{#each $worldLevelBiomes as biome}
 				<a href="/directory/{biome.sitePath}">
 					<div class="relative mb-5">
@@ -32,8 +32,8 @@
 							class="text-white font-bold text-[24px] md:text-[40px] absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
 						>
 							{biome.name}
-						</h2>
-						<img src={biome.imagePath} alt="Loading biome" class="min-h-28 " />
+						</h2> <br>
+					
 					</div>
 				</a>
 			{/each}
