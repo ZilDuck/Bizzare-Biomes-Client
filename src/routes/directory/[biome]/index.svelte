@@ -2,7 +2,8 @@
 	export async function load({ params, fetch }) {
 		const { biome } = params;
 		const biomePath = biome;
-		const biomesList = await API.get(`biomes/${biomePath}`);
+		console.log(biomePath)
+		const biomesList = await API.get(`street/${biomePath}`);
 
 		console.table(biomesList);
 		console.log(biomePath);
@@ -58,8 +59,8 @@
 				{#if biomesList}
 					{#each biomesList as i}
 						<li>
-							<a href="/directory/id/{i.id}" class="text-xl font-semibold text-white"
-								>{biome?.name} #{String(i.id).padStart(4, '0')}</a
+							<a href="/directory/id/{i.data.id}" class="text-xl font-semibold text-white"
+								>{i.houseNumber} {biome?.name} #{String(i.data.id).padStart(4, '0')}</a
 							>
 						</li>
 					{/each}

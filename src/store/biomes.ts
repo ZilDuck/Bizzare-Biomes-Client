@@ -2,6 +2,7 @@ import { readable } from 'svelte/store';
 
 export type worldLevelBiome = {
   name:string,
+  houseNumber: number,
   sitePath:string,
   imagePath:string,
   bottomColour?:string,
@@ -10,14 +11,16 @@ export type worldLevelBiome = {
 
 const biomesList: Array<worldLevelBiome> = [
   {
-      name: 'Aurora',
-      sitePath: 'aurora',
+      name: 'Arid Lodge',
+      houseNumber: 0,
+      sitePath: 'Arid Lodge',
       imagePath: '/assets/backgrounds/Aurora borealis sky.png',
       bottomColour: '#00383e',
       topColour: '#00383e'
   },
   {
       name: 'Big clouds',
+      houseNumber: 0,
       sitePath: 'big-clouds',
       imagePath: '/assets/backgrounds/Big clouds.png',
       bottomColour: '#e6f1f2',
@@ -25,6 +28,7 @@ const biomesList: Array<worldLevelBiome> = [
   },
   {
       name: 'Cityscape',
+      houseNumber: 0,
       sitePath: 'cityscape',
       imagePath: '/assets/backgrounds/City scape WIP.png',
       bottomColour: '#ea976d',
@@ -32,6 +36,7 @@ const biomesList: Array<worldLevelBiome> = [
   },
   {
       name: 'Comet sky',
+      houseNumber: 0,
       sitePath: 'comet-sky',
       imagePath: '/assets/backgrounds/Comet sky.png',
       bottomColour: '#00383e',
@@ -39,6 +44,7 @@ const biomesList: Array<worldLevelBiome> = [
   },
   {
       name: 'Desert sky',
+      houseNumber: 0,
       sitePath: 'desert-sky',
       imagePath: '/assets/backgrounds/Desert sky.png',
       bottomColour: '#00383e',
@@ -46,6 +52,7 @@ const biomesList: Array<worldLevelBiome> = [
   },
   {
       name: 'Floating islands',
+      houseNumber: 0,
       sitePath: 'floating-islands',
       imagePath: '/assets/backgrounds/Floating islands WIP.png',
       bottomColour: '#00383e',
@@ -53,6 +60,7 @@ const biomesList: Array<worldLevelBiome> = [
   },
   {
       name: 'Great wave',
+      houseNumber: 0,
       sitePath: 'great-wave',
       imagePath: '/assets/backgrounds/Great wave.png',
       bottomColour: '#00383e',
@@ -60,6 +68,7 @@ const biomesList: Array<worldLevelBiome> = [
   },
   {
       name: 'Islands sky',
+      houseNumber: 0,
       sitePath: 'islands-sky',
       imagePath: '/assets/backgrounds/Islands sky.png',
       bottomColour: '#00383e',
@@ -67,6 +76,7 @@ const biomesList: Array<worldLevelBiome> = [
   },
   {
       name: 'Japanese pagoda',
+      houseNumber: 0,
       sitePath: 'japanese-pagoda',
       imagePath: '/assets/backgrounds/Japanese pagoda.png',
       bottomColour: '#00383e',
@@ -74,6 +84,7 @@ const biomesList: Array<worldLevelBiome> = [
   },
   {
       name: 'Mountain sky',
+      houseNumber: 0,
       sitePath: 'mountains-sky',
       imagePath: '/assets/backgrounds/Mountains sky.png',
       bottomColour: '#00383e',
@@ -81,6 +92,7 @@ const biomesList: Array<worldLevelBiome> = [
   },
   {
       name: 'Night sky',
+      houseNumber: 0,
       sitePath: 'night-sky',
       imagePath: '/assets/backgrounds/Night sky.png',
       bottomColour: '#00383e',
@@ -88,6 +100,7 @@ const biomesList: Array<worldLevelBiome> = [
   },
   {
       name: 'Pine forest',
+      houseNumber: 0,
       sitePath: 'pine-forest',
       imagePath: '/assets/backgrounds/Pine forest.png',
       bottomColour: '#50cf7d',
@@ -95,6 +108,7 @@ const biomesList: Array<worldLevelBiome> = [
   },
   {
       name: 'Rainbow sky',
+      houseNumber: 0,
       sitePath: 'rainbow-sky',
       imagePath: '/assets/backgrounds/Rainbow sky.png',
       bottomColour: '#00383e',
@@ -102,6 +116,7 @@ const biomesList: Array<worldLevelBiome> = [
   },
   {
       name: 'Sky serpent',
+      houseNumber: 0,
       sitePath: 'sky-serpent',
       imagePath: '/assets/backgrounds/Sky serpent.png',
       bottomColour: '#00383e',
@@ -109,6 +124,7 @@ const biomesList: Array<worldLevelBiome> = [
   },
   {
       name: 'Spiky ridge',
+      houseNumber: 0,
       sitePath: 'spiky-ridge',
       imagePath: '/assets/backgrounds/Spiky ridge.png',
       bottomColour: '#00383e',
@@ -117,12 +133,14 @@ const biomesList: Array<worldLevelBiome> = [
   {
       name: 'Sunny sky',
       sitePath: 'sunny-sky',
+      houseNumber: 0,
       imagePath: '/assets/backgrounds/Sunny sky.png',
       bottomColour: '#00383e',
       topColour: '#90ebd0'
   },
   {
       name: 'Sunny sky two',
+      houseNumber: 0,
       sitePath: 'sunset-sky',
       imagePath: '/assets/backgrounds/Sunset sky WIP 2.png',
       bottomColour: '#00383e',
@@ -130,6 +148,7 @@ const biomesList: Array<worldLevelBiome> = [
   },
   {
       name: 'Volcano sky',
+      houseNumber: 0,
       sitePath: 'volcano-sky',
       imagePath: '/assets/backgrounds/Volcano sky fixed.png',
       bottomColour: '#00383e',
@@ -137,6 +156,7 @@ const biomesList: Array<worldLevelBiome> = [
   },
   {
       name: 'Dark moon',
+      houseNumber: 0,
       sitePath: 'dark-moon',
       imagePath: '/assets/backgrounds/Zelda moon.png',
       bottomColour: '#00383e',

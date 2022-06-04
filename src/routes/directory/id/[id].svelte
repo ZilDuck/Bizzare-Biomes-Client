@@ -4,9 +4,11 @@
 		const page = url.searchParams.get('page') ?? 1;
 
 		const metadata = await API.get(`biome/${id}`);
+		console.log(metadata)
 		const { ownedNFTs, pagination } = await API.get(
 			`address/${metadata.base16}?page=${page}&size=20`
 		);
+		console.log(page)
 
 		const truncatedWallet = metadata.bech32
 			? `${metadata.bech32.slice(0, 6)}...${metadata.bech32.slice(-6)}`
@@ -71,7 +73,7 @@
 		const res = await API.get(
 			`address/${metadata.base16}?page=${page}&size=${pagination.size}`
 		).catch((error) => {
-			console.log(error);
+			console.error(error);
 		});
 
 		ownedNFTs = [...res.ownedNFTs];
@@ -86,6 +88,8 @@
 
 	$: nftName = `${biome?.name} #${id}`;
 	let biomeTypeBackground = '/assets/compositions/lightblueclouds.png';
+	console.log(`metadata ${JSON.stringify(metadata)}`)
+	console.log(`pagination ${JSON.stringify(pagination)}`)
 </script>
 
 <svelte:head>

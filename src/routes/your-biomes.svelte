@@ -19,7 +19,7 @@ import BiomeCard from '../components/BiomeCard.svelte'
 	let userBiomes:any[] = []
 
 	const getBiomes = async (x:string) => {
-		userBiomes = await API.get(`biomes/holder/${x}`)
+		userBiomes = await API.get(`biomes/${x}`)
 	}
 
 	const unsubscribe = wallet.subscribe(value => {

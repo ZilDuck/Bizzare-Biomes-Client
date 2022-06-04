@@ -1,30 +1,37 @@
 <script lang="ts">
 	import ProgressBar from './ProgressBar.svelte';
+  import walletStore from '../store/wallet'
 
-	let mintTime = '01/01/2022, 10:00AM GMT';
-	let mintCount = 2048;
-	let mintPrice = 3000;
+    let mintTime = '01/01/2022, 10:00AM GMT'
+    let mintCount = 3000
+    let mintPrice = 2000
+    let currentMinted = 0 // TODO
+    let currentMintCount = 1;
 
-	// current minted amount (to be replaced with data from store)
-	let currentMinted = 1509;
 
-	let currentMintCount = 1;
+function handleDecrease() {
+    if (currentMintCount <= 1) {
+        return;
+    } else {
+        currentMintCount--;
+    }
+}
 
-	function handleDecrease() {
-		if (currentMintCount <= 1) {
-			return;
-		} else {
-			currentMintCount--;
-		}
-	}
+function handleIncrease() {
+    if (currentMintCount > mintCount - currentMinted) {
+        return;
+    } else {
+        currentMintCount++;
+    }
+}
 
-	function handleIncrease() {
-		if (currentMintCount > mintCount - currentMinted) {
-			return;
-		} else {
-			currentMintCount++;
-		}
-	}
+async function MintTokens(){
+  const response = await walletStore.mintVouchers(String(currentMintCount))
+  console.log(`got response ${response}`)
+}
+
+
+
 </script>
 
 <div class="bg-white rounded-lg {$$restProps.class}">
@@ -50,9 +57,12 @@
 		</div>
 
 		<div class="py-[20px] flex gap-5">
-			<a href={'/mint'} class="btn btn-primary w-full self-center text-center"
-				>Mint {currentMintCount} NFT for {mintPrice * currentMintCount} Zil</a
-			>
+			<button
+				on:click={MintTokens}
+                class="btn btn-primary w-full self-center text-center"
+        >
+				Mint {currentMintCount} NFT for {mintPrice * currentMintCount} Zilkroad
+            </button>
 			<button
 				on:click={handleDecrease}
 				disabled={currentMintCount === 1}
