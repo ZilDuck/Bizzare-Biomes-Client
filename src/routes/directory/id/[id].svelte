@@ -119,29 +119,9 @@
 		<div
 			class="bg-white rounded-lg w-full max-w-screen-xl flex flex-col sm:flex-row justify-start sm:justify-between sm:items-center p-5"
 		>
-			<div class="flex flex-col sm:flex-row">
-				<div
-					class="flex flex-col sm:gap-1 sm:pr-5 sm:mr-5 border-r-0 sm:border-r border-b sm:border-b-0 border-gray-200 mb-5 sm:mb-0 pb-5 sm:pb-0"
-				>
-					<h6 class="text-[#CDCDCD] font-normal text-base">Zilkroad price</h6>
-					<h5 class="text-gray-700 font-normal text-base">? ZIL</h5>
-				</div>
-				<div
-					class="flex flex-col sm:gap-1 sm:pr-5 sm:mr-5 border-r-0 sm:border-r border-b sm:border-b-0 border-gray-200 mb-5 sm:mb-0 pb-5 sm:pb-0"
-				>
-					<h6 class="text-[#CDCDCD] font-normal text-base">Sales</h6>
-					<h5 class="text-gray-700 font-normal text-base">?</h5>
-				</div>
-				<div
-					class="flex flex-col sm:gap-1 sm:pr-5 sm:mr-5 border-b sm:border-b-0 border-gray-200 mb-5 sm:mb-0 pb-5 sm:pb-0"
-				>
-					<h6 class="text-[#CDCDCD] font-normal text-base">Volume 30d</h6>
-					<h5 class="text-gray-700 font-normal text-base">? $</h5>
-				</div>
-			</div>
 			<div class="flex items-center">
 				<div class="w-[40px] h-[40px] bg-[#495A7F] rounded-[100%] mr-5" />
-				<p class="text-[#495A7F]">Owned by <a href="https://viewblock.io/zilliqa/address/{metadata.bech32}" target="_blank" class="underline">{truncatedWallet}</a></p>
+				<p class="text-[#495A7F]">Owned by <a href="https://viewblock.io/zilliqa/address/{metadata.bech32}" target="_blank" class="underline">{metadata.bech32}</a></p>
 			</div>
 		</div>
 		<div class="flex items-center mt-5 mb-[120px]">
