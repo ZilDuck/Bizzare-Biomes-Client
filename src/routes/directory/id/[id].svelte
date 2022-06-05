@@ -4,24 +4,26 @@
 		const page = url.searchParams.get('page') ?? 1;
 
 		const metadata = await API.get(`biome/${id}`);
-		console.log(metadata)
 		const { ownedNFTs, pagination } = await API.get(
 			`address/${metadata.base16}?page=${page}&size=20`
 		);
-		console.log(page)
 
 		const truncatedWallet = metadata.bech32
 			? `${metadata.bech32.slice(0, 6)}...${metadata.bech32.slice(-6)}`
 			: '';
 
-		const nftImage = metadata.data.resources[0].uri;
-		const biomeName = metadata.data.attributes[0].value;
+		
+		const biomeData = metadata.biome;
+
+		const nftImage = biomeData.data.resources[0].uri;
+		const biomeName = biomeData.data.name;
 
 		return {
 			props: {
 				biomeName,
 				id,
 				metadata,
+				biomeData,
 				ownedNFTs,
 				truncatedWallet,
 				nftImage,
@@ -33,7 +35,6 @@
 
 <script lang="ts">
 	import API from '../../../api';
-	import { worldLevelBiomes } from '../../../store/biomes';
 	import Footer from '../../../components/Footer.svelte';
 	import NftCard from '../../../components/NFTCard.svelte';
 	import BiomeCard from '../../../components/BiomeCard.svelte';
@@ -45,6 +46,7 @@
 	export let id: string;
 	export let biomeName: string;
 	export let metadata: any;
+	export let biomeData: any;
 	export let ownedNFTs: any;
 	export let truncatedWallet: string;
 	export let nftImage: string;
@@ -84,12 +86,8 @@
 		});
 	}
 
-	const biome = $worldLevelBiomes.find((biome) => biome.name === biomeName);
-
-	$: nftName = `${biome?.name} #${id}`;
+	$: nftName = `${biomeName} #${id}`;
 	let biomeTypeBackground = '/assets/compositions/lightblueclouds.png';
-	console.log(`metadata ${JSON.stringify(metadata)}`)
-	console.log(`pagination ${JSON.stringify(pagination)}`)
 </script>
 
 <svelte:head>
@@ -109,8 +107,8 @@
 <section class="bg-[#90ebd0]">
 	<div class="max-w-screen-xl mx-auto px-5">
 		<div class="flex flex-row mb-5 gap-x-5 w-full max-w-screen-xl justify-start">
-			<a href="/directory/{biome?.sitePath}" class="btn btn-primary"
-				>Go back to all {biome?.name}'s</a
+			<a href="/directory/street/{biomeData?.streetName}" class="btn btn-primary"
+				>Go back to all {biomeData?.streetName}'s</a
 			>
 		</div>
 		<div class="relative mb-5">
@@ -125,8 +123,8 @@
 			</div>
 		</div>
 		<div class="flex items-center mt-5 mb-[120px]">
-			{#if metadata.data.attributes}
-				{#each metadata.data.attributes as attribute}
+			{#if biomeData.data.attributes}
+				{#each biomeData.data.attributes as attribute}
 					<div class="bg-white rounded-lg flex justify-between items-center py-[12px] px-5 mr-5">
 						<p><span class="text-[#CDCDCD]">{attribute.trait_type}:</span> {attribute.value}</p>
 					</div>
