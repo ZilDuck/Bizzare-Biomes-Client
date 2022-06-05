@@ -3,7 +3,8 @@ import Big from 'big.js'
 import * as Cookie from 'cookie'
 import { browser } from '$app/env'
 import { writable } from 'svelte/store'
-
+import { scillaJSONVal } from '@zilliqa-js/scilla-json-utils'
+import { units, Long, BN, bytes } from '@zilliqa-js/util'
 
 export type Wallet = {
   base16? : string
@@ -82,12 +83,58 @@ const createWalletStore = () => {
     connect()
   }
 
+
+ const mintVouchers = async (currentMintCount:string) => {
+  const { contracts, utils, wallet } = window.zilPay
+  const { base16, bech32 } = wallet.defaultAccount
+  const quantity = parseInt(currentMintCount)
+  const nonce = fetchNonce()
+  console.log(`mintVouchers - ${wallet.base16}/${quantity}/${nonce}`)
+  const contract = contracts.at('0x0b633edca3afcc9b2505c2dea092621fdf4c3368')
+
+  const costForOne = 100000000000000
+  const totalCost = costForOne * quantity
+  const gasLimit = 4000 * quantity
+
+
+  const pair = [base16, ""]
+  const listOfPairs = Array(quantity).fill(pair)
+  
+  const VERSION = bytes.pack(333, 1)
+  const tx = await contract.call('ProxyBatchMint',
+  [
+    {
+      vname: 'token_uris_list',
+      type: 'List (Pair (ByStr20) (String))',
+      value: scillaJSONVal("List (Pair (ByStr20) (String))", listOfPairs)
+    }
+  ],
+  {
+    version: VERSION,
+    amount: new BN(totalCost),
+    gasPrice: units.toQa('2000', units.Units.Li),
+    gasLimit: Long.fromNumber(gasLimit),
+    nonce
+  }
+)
+
+console.log(`Minting vouchers`)
+console.log(`Address: ${base16}  quantity: ${quantity}`)
+console.log(`Nonce: ${nonce}`)
+console.log(`Txid: ${tx.hash}`)
+
+return tx
+}
+
   return {
     subscribe,
     connect,
     increaseNonce,
-    fetchNonce
+    fetchNonce,
+    mintVouchers
   }
+
+  
 }
 
 export default createWalletStore()

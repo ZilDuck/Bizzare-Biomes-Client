@@ -1,22 +1,25 @@
 <script context="module">
 	export async function load({ params, fetch }) {
-        const streetNames = await API.get(`street`);
+        const { street } = params;
+        const biomesList = await API.get(`street/${street}`);
 
 		return {
 			props: {
-                streetNames
+                street,
+                biomesList
 			}
 		};
 	}
 </script>
 
 <script lang="ts">
-	import API from '../../api';
-    import Footer from '../../components/Footer.svelte';
+	import API from '../../../api';
+    import Footer from '../../../components/Footer.svelte';
     let floatingIsland = '/assets/backgrounds/Floating islands.png';
     let moonScape = '/assets/foregrounds/Moonscape.png';
 
-    export let streetNames: any[];
+    export let street: string;
+	export let biomesList: any[];
 </script>
 
 <svelte:head>
@@ -34,18 +37,21 @@
 	<div
 		class="max-w-screen-xl flex justify-center items-center flex-col text-primary mb-[120px] mx-auto px-5"
 	>
-		<h1 class="w-full font-black text-[72px]  text-center">Directory</h1>
+		<h1 class="w-full font-black text-[72px]  text-center">{street}</h1>
 		<p class="mt-5 text-xl">An NFT project for duck holders, and newcomers alike.</p>
-		<div class="max-w-screen-xl mt-20 w-full bg-[#495A7F] p-10 pb-20">
-			<div class="w-full border-b-[1px] border-b-[#647FBB] pb-10 mb-10">
+		<div class="flex flex-row my-5 gap-x-5 w-full max-w-screen-xl justify-start">
+			<a href="/directory" class="btn btn-primary">Go back to all streets</a>
+		</div>
+		<div class="max-w-screen-xl w-full bg-[#495A7F] p-10 pb-20">
+			<!-- <div class="w-full border-b-[1px] border-b-[#647FBB] pb-10 mb-10">
 				<h2 class="text-4xl text-white font-semibold">Biome directory</h2>
-			</div>
+			</div> -->
 			<ul class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
-				{#if streetNames}
-					{#each streetNames as street}
+				{#if biomesList}
+					{#each biomesList as biome}
 						<li>
-							<a href="/directory/street/{street}" class="text-xl font-semibold text-white"
-								>{street}</a
+							<a href="/directory/id/{biome.id}" class="text-xl font-semibold text-white"
+								>{biome.houseNumber} {biome?.streetName} #{String(biome.id).padStart(4, '0')}</a
 							>
 						</li>
 					{/each}

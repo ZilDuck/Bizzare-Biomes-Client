@@ -2,7 +2,7 @@
 	import MintCard from '../components/MintCard.svelte';
 	import Footer from '../components/Footer.svelte';
 	import HeroContent from '../components/HeroContent.svelte';
-	let zeldaMoon = '/assets/backgrounds/Zelda moon.png';
+	let zeldaMoon = '/assets/backgrounds/Dark moon.png';
 	let gemFields = '/assets/foregrounds/Gem fields.png';
 </script>
 
