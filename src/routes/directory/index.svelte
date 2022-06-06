@@ -26,13 +26,12 @@
 <div class="h-[150px]" style="background-color: #FDC2CA;" />
 
 <div class="relative w-full">
-    <img src={moonScape} alt="Moonscape" class="bg-transparent absolute" />
     <img src={floatingIsland} alt="Floating Islands" class=" bg-transparent" />
 </div>
 
-<section class="pb-10 bg-[#C5C4BE]">
+<section class="pb-10 bg-[#FDC2CA]">
 	<div
-		class="max-w-screen-xl flex justify-center items-center flex-col text-primary mb-[120px] mx-auto px-5"
+		class="max-w-screen-xl flex justify-center items-center flex-col text-primary mx-auto px-5"
 	>
 		<h1 class="w-full font-black text-[72px]  text-center">Directory</h1>
 		<p class="mt-5 text-xl">An NFT project for duck holders, and newcomers alike.</p>
@@ -55,6 +54,6 @@
 	</div>
 </section>
 
-<div class="bg-[#C5C4BE]">
+<div class="bg-[#FDC2CA]">
 	<Footer />
 </div>
