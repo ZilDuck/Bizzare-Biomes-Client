@@ -1,5 +1,5 @@
 {
-	"name": "project-ponds-frontend",
+	"name": "bizzare-biomes-client",
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "svelte-kit dev --host",
