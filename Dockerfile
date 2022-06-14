@@ -1,5 +1,5 @@
 # Our Node base image
-FROM node:14.16.1 as build
+FROM node:16.13.1 as build
 
 # Change our current working directory
 WORKDIR /app
@@ -17,7 +17,7 @@ RUN npm run build
 ###
 # Only copy over the Node pieces we need
 ###
-FROM node:14.16.1
+FROM node:16.13.1
 
 WORKDIR /app
 COPY --from=build /app/build ./build

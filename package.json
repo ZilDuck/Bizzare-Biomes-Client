@@ -13,7 +13,7 @@
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/adapter-node": "^1.0.0-next.67",
 		"@sveltejs/kit": "next",
 		"@tsconfig/svelte": "^3.0.0",
 		"@types/big.js": "^6.1.3",
