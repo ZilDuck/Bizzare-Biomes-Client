@@ -22,5 +22,5 @@ WORKDIR /app
 COPY . .
 COPY --from=build /app/node_modules ./node_modules
 
-CMD ["start.sh"]
+CMD ["/app/start.sh"]
 
