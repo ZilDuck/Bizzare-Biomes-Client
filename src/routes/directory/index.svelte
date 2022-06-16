@@ -1,9 +1,6 @@
 <script context="module">
-    export const hydrate = false;
-
-	export async function load({ params, fetch }) {
-	    console.log('load street')
-        const streetNames = await API.get(`street`);
+    export async function load({ params, fetch }) {
+	    const streetNames = await API.get(`street`);
 
 		return {
 			props: {
