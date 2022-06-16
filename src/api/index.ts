@@ -6,10 +6,8 @@ const get = async (point: endPoints) => {
   console.log(import.meta.env.VITE_BIOMES_API)
   console.log(process.env.BIOMES_API);
   console.log(`${baseURL}/${point}`);
-  const resp = await fetch(`${baseURL}/${point}`);
-  const body = await resp.text();
-  console.log(body)
-  return JSON.parse(body)
+  const res = await fetch(`${baseURL}/${point}`);
+  return res.json()
 } 
 
 const API ={
