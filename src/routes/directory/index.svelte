@@ -12,7 +12,6 @@
 
 <script lang="ts">
 	import API from '../../api';
-    import Footer from '../../components/Footer.svelte';
     let floatingIsland = '/assets/backgrounds/Floating islands.png';
     let moonScape = '/assets/foregrounds/Moonscape.png';
 
@@ -40,20 +39,11 @@
 				<h2 class="text-4xl text-white font-semibold">Biome directory</h2>
 			</div>
 			<ul class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
-				{#if streetNames}
-					{#each streetNames as street}
-						<li>
-							<a href="/directory/street/{street}" class="text-xl font-semibold text-white"
-								>{street}</a
-							>
-						</li>
-					{/each}
-				{/if}
+
 			</ul>
 		</div>
 	</div>
 </section>
 
 <div class="bg-[#FDC2CA]">
-	<Footer />
 </div>
