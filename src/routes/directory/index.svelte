@@ -12,6 +12,7 @@
 
 <script lang="ts">
 	import API from '../../api';
+    import Footer from '../../components/Footer.svelte';
     let floatingIsland = '/assets/backgrounds/Floating islands.png';
     let moonScape = '/assets/foregrounds/Moonscape.png';
 
