@@ -1,4 +1,4 @@
-const baseURL:string = process.env.BIOMES_API ?? import.meta.env.VITE_BIOMES_API
+const baseURL = process.env.BIOMES_API ?? import.meta.env.VITE_BIOMES_API
 
 type endPoints = 'biomes-list'|'biomes'|string
 
