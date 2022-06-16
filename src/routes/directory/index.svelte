@@ -1,4 +1,6 @@
 <script context="module">
+    export const hydrate = false;
+
 	export async function load({ params, fetch }) {
 	    console.log('load street')
         const streetNames = await API.get(`street`);
