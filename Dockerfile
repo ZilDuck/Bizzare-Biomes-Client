@@ -22,5 +22,7 @@ WORKDIR /app
 COPY . .
 COPY --from=build /app/node_modules ./node_modules
 
-CMD ["/app/start.sh"]
+RUN npm run build
+
+CMD ["node", "./build/index.js"]
 
