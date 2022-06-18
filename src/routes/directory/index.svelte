@@ -16,7 +16,6 @@
 
     export let streetNames: [];
 </script>
-{@debug streetNames}
 <svelte:head>
 	<title>Home</title>
 </svelte:head>

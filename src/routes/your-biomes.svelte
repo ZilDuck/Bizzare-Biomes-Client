@@ -5,9 +5,8 @@
 <script lang="ts">
 	import Footer from '../components/Footer.svelte'
 	import wallet from '../store/wallet'
-	import { onDestroy, onMount } from 'svelte'
-	import * as API from '../api'
-import BiomeCard from '../components/BiomeCard.svelte'
+	import { onDestroy } from 'svelte'
+	import BiomeCard from '../components/BiomeCard.svelte'
 	let nightSky = '/assets/backgrounds/Night sky.png'
 	let comp1 = '/assets/compositions/1.png'
 
@@ -19,7 +18,8 @@ import BiomeCard from '../components/BiomeCard.svelte'
 	let userBiomes:any[] = []
 
 	const getBiomes = async (x:string) => {
-		userBiomes = await API.get(`biomes/${x}`)
+		const { response } = await fetch(`/api/biomes/${x}.json`).then((r) => r.json())
+		userBiomes = response
 	}
 
 	const unsubscribe = wallet.subscribe(value => {
@@ -51,11 +51,13 @@ import BiomeCard from '../components/BiomeCard.svelte'
 
 <section class="bg-[#447197]">
 	<div class="flex max-w-screen-xl ">
-		{#each userBiomes as biome}
-			<div class="relative mb-5 mx-5">
-				<BiomeCard class=" self-center" id={biome.id} biome={biome} />
-			</div>
-		{/each}
+		{#if userBiomes}
+			{#each userBiomes as biome}
+				<div class="relative mb-5 mx-5">
+					<BiomeCard class=" self-center" id={biome.id} biome={biome} />
+				</div>
+			{/each}
+		{/if}
 	</div>
 
 	<Footer />
