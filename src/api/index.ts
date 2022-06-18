@@ -1,14 +1,15 @@
-const baseURL:string = "http://staging-api.bizarrebiomes.com"
+const baseURL: string = process.env.BIOMES_API ?? 'https://api.bizarrebiomes.com';
 
-type endPoints = 'biomes-list'|'biomes'|string
+type endPoints = 'biomes-list' | 'biomes' | 'street' | string;
 
-const get = async (point: endPoints) => {
-  const res = fetch(`${baseURL}/${point}`)
-  return (await res).json()
-} 
-
-const API ={
-  get
-}
-
-export default API
+export const get = async (point: endPoints) => {
+	return fetch(`${baseURL}/${point}`)
+		.then((r) => r.text())
+		.then((json) => {
+			try {
+				return JSON.parse(json);
+			} catch (err) {
+				return json;
+			}
+		});
+};

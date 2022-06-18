@@ -3,8 +3,8 @@
 		const { id } = params;
 		const page = url.searchParams.get('page') ?? 1;
 
-		const metadata = await API.get(`biome/${id}`);
-		const { ownedNFTs, pagination } = await API.get(
+		const metadata = await fetch(`biome/${id}`);
+		const { ownedNFTs, pagination } = await fetch(
 			`address/${metadata.base16}?page=${page}&size=20`
 		);
 
@@ -34,7 +34,6 @@
 </script>
 
 <script lang="ts">
-	import API from '../../../api';
 	import Footer from '../../../components/Footer.svelte';
 	import NftCard from '../../../components/NFTCard.svelte';
 	import BiomeCard from '../../../components/BiomeCard.svelte';
@@ -72,7 +71,7 @@
 
 	async function handlePageChange(event: any) {
 		const page = event.detail.currentPage;
-		const res = await API.get(
+		const res = await fetch(
 			`address/${metadata.base16}?page=${page}&size=${pagination.size}`
 		).catch((error) => {
 			console.error(error);

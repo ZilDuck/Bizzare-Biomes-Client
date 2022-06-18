@@ -1,24 +1,22 @@
 <script context="module">
-    export async function load({ params, fetch }) {
-	    const streetNames = await API.get(`street`);
 
+	export async function load({ params, fetch }) {
+	    const {streetNames} = await fetch('/api/streets.json').then((r) => r.json())
 		return {
 			props: {
-                streetNames
+				streetNames
 			}
 		};
 	}
 </script>
 
 <script lang="ts">
-	import API from '../../api';
     import Footer from '../../components/Footer.svelte';
     let floatingIsland = '/assets/backgrounds/Floating islands.png';
-    let moonScape = '/assets/foregrounds/Moonscape.png';
 
-    export let streetNames: any[];
+    export let streetNames: [];
 </script>
-
+{@debug streetNames}
 <svelte:head>
 	<title>Home</title>
 </svelte:head>

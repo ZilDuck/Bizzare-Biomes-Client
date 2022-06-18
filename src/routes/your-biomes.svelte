@@ -6,7 +6,7 @@
 	import Footer from '../components/Footer.svelte'
 	import wallet from '../store/wallet'
 	import { onDestroy, onMount } from 'svelte'
-	import API from '../api'
+	import * as API from '../api'
 import BiomeCard from '../components/BiomeCard.svelte'
 	let nightSky = '/assets/backgrounds/Night sky.png'
 	let comp1 = '/assets/compositions/1.png'
