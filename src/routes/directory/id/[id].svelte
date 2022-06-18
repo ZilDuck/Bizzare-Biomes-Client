@@ -4,14 +4,13 @@
 		const page = url.searchParams.get('page') ?? 1;
 
 		const {metadata} = await fetch(`/api/biome/${id}.json`).then((r) => r.json())
-		const { ownedNFTsAndPagination } = await fetch(
+		const {pagination, ownedNFTs}  = await fetch(
 			`/api/address/${metadata.base16}.json?page=${page}&size=20`
 		).then((r) => r.json())
 		const truncatedWallet = metadata.bech32
 			? `${metadata.bech32.slice(0, 6)}...${metadata.bech32.slice(-6)}`
 			: '';
 
-		
 		const biomeData = metadata.biome;
 
 		const nftImage = biomeData.data.resources[0].uri;
@@ -23,10 +22,10 @@
 				id,
 				metadata,
 				biomeData,
-				ownedNFTs: ownedNFTsAndPagination?.ownedNFTs,
+				ownedNFTs,
 				truncatedWallet,
 				nftImage,
-				pagination: ownedNFTsAndPagination?.pagination
+				pagination
 			}
 		};
 	}
@@ -70,13 +69,9 @@
 
 	async function handlePageChange(event: any) {
 		const page = event.detail.currentPage;
-		const res = await fetch(
-			`/api/address/${metadata.base16}.json?page=${page}&size=${pagination.size}`
-		).catch((error) => {
-			console.error(error);
-		});
-
-		ownedNFTs = [...res.ownedNFTs];
+		({pagination, ownedNFTs} = await fetch(
+				`/api/address/${metadata.base16}.json?page=${page}&size=20`
+		).then((r) => r.json()))
 
 		currentPage = page;
 		replaceStateWithQuery({
