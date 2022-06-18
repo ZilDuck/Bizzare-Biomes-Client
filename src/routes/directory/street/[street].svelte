@@ -1,7 +1,7 @@
 <script context="module">
 	export async function load({ params, fetch }) {
         const { street } = params;
-        const biomesList = await API.get(`street/${street}`);
+		const {biomesList} = await fetch(`/api/street/${street}.json`).then((r) => r.json())
 
 		return {
 			props: {
@@ -13,7 +13,6 @@
 </script>
 
 <script lang="ts">
-	import API from '../../../api';
     import Footer from '../../../components/Footer.svelte';
     let floatingIsland = '/assets/backgrounds/Floating islands.png';
     let moonScape = '/assets/foregrounds/Moonscape.png';

@@ -1,24 +1,15 @@
-import { variables } from '../variables.js'
-import dotenv from 'dotenv';
-dotenv.config()
+const baseURL: string = process.env.BIOMES_API ?? 'https://api.bizarrebiomes.com';
 
-process.env.IS_TESTNET ? console.log("UTILS TESTNET") : console.log("UTILS MAINNET") 
-const apiURL = process.env.IS_TESTNET ? process.env.TESTNET_API : process.env.MAINNET_API
-console.log(`using endpoint ${apiURL}`)
+type endPoints = 'biomes-list' | 'biomes' | 'street' | string;
 
-export const { biomesApi } = variables
-
-const baseURL:string = biomesApi
-
-type endPoints = 'biomes-list'|'biomes'|string
-
-const get = async (point: endPoints) => {
-  const res = fetch(`${baseURL}/${point}`)
-  return (await res).json()
-} 
-
-const API ={
-  get
-}
-
-export default API
+export const get = async (point: endPoints) => {
+	return fetch(`${baseURL}/${point}`)
+		.then((r) => r.text())
+		.then((json) => {
+			try {
+				return JSON.parse(json);
+			} catch (err) {
+				return json;
+			}
+		});
+};

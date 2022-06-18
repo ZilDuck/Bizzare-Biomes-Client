@@ -1,13 +1,12 @@
 <script context="module">
-	export async function load({ params, url }) {
+	export async function load({ params, url, fetch }) {
 		const { id } = params;
 		const page = url.searchParams.get('page') ?? 1;
 
-		const metadata = await API.get(`biome/${id}`);
-		const { ownedNFTs, pagination } = await API.get(
-			`address/${metadata.base16}?page=${page}&size=20`
-		);
-
+		const {metadata} = await fetch(`/api/biome/${id}.json`).then((r) => r.json())
+		const { ownedNFTsAndPagination } = await fetch(
+			`/api/address/${metadata.base16}.json?page=${page}&size=20`
+		).then((r) => r.json())
 		const truncatedWallet = metadata.bech32
 			? `${metadata.bech32.slice(0, 6)}...${metadata.bech32.slice(-6)}`
 			: '';
@@ -24,17 +23,16 @@
 				id,
 				metadata,
 				biomeData,
-				ownedNFTs,
+				ownedNFTs: ownedNFTsAndPagination?.ownedNFTs,
 				truncatedWallet,
 				nftImage,
-				pagination
+				pagination: ownedNFTsAndPagination?.pagination
 			}
 		};
 	}
 </script>
 
 <script lang="ts">
-	import API from '../../../api';
 	import Footer from '../../../components/Footer.svelte';
 	import NftCard from '../../../components/NFTCard.svelte';
 	import BiomeCard from '../../../components/BiomeCard.svelte';
@@ -72,8 +70,8 @@
 
 	async function handlePageChange(event: any) {
 		const page = event.detail.currentPage;
-		const res = await API.get(
-			`address/${metadata.base16}?page=${page}&size=${pagination.size}`
+		const res = await fetch(
+			`/api/address/${metadata.base16}.json?page=${page}&size=${pagination.size}`
 		).catch((error) => {
 			console.error(error);
 		});
@@ -154,9 +152,11 @@
 				on:pageChange={handlePageChange}
 			/>
 
-			{#each ownedNFTs as nft (nft.contract + nft.tokenId)}
-				<NftCard {nft} />
-			{/each}
+			{#if ownedNFTs}
+				{#each ownedNFTs as nft (nft.contract + nft.tokenId)}
+					<NftCard {nft} />
+				{/each}
+			{/if}
 
 			<Pagination
 				numPages={pagination.total_pages}

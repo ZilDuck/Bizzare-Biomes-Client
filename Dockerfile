@@ -12,17 +12,17 @@ RUN npm install
 # Copy over rest of the project files
 COPY . .
 
-RUN npm run build
-
 ###
 # Only copy over the Node pieces we need
 ###
 FROM node:16.13.1
 
 WORKDIR /app
-COPY --from=build /app/build ./build
+
+COPY . .
 COPY --from=build /app/node_modules ./node_modules
-COPY package.json .
+
+RUN npm run build
 
 CMD ["node", "./build/index.js"]
 
