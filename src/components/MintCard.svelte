@@ -1,11 +1,11 @@
 <script lang="ts">
 	import ProgressBar from './ProgressBar.svelte';
-  import walletStore from '../store/wallet'
+  	import walletStore from '../store/wallet'
 
-    let mintTime = '01/01/2022, 10:00AM GMT'
+    let mintTime = '02/07/2022 @ 00:01 UTC' //  this will be a block in the future
     let mintCount = 3000
     let mintPrice = 2000
-    let currentMinted = 0 // TODO
+    let currentMinted = 0 // TODO read NFT token_id
     let currentMintCount = 1;
 
 
@@ -29,8 +29,6 @@ async function MintTokens(){
   const response = await walletStore.mintVouchers(String(currentMintCount))
   console.log(`got response ${response}`)
 }
-
-
 
 </script>
 
@@ -61,7 +59,7 @@ async function MintTokens(){
 				on:click={MintTokens}
                 class="btn btn-primary w-full self-center text-center"
         >
-				Mint {currentMintCount} NFT for {mintPrice * currentMintCount} Zilkroad
+				Mint {currentMintCount} NFT for {mintPrice * currentMintCount} ZIL
             </button>
 			<button
 				on:click={handleDecrease}

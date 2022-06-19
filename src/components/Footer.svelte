@@ -10,10 +10,6 @@
 	<div class="max-w-screen-xl grid grid-cols-1 sm:grid-cols-2 items-center mb-20 mx-auto px-5">
 		<div>
 			<h1 class="text-4xl mb-5 font-semibold text-[#495A7F]">Join the discord.</h1>
-			<p class="font-normal text-base text-[#495A7F]">
-				Join the discord and connect with the rest of the community. Here you will find duck lovers,
-				as well as our new biome holders. A friendly place to connect with others.
-			</p>
 			<div class="flex flex-row my-5 gap-x-5">
 				<a class="btn btn-primary" href="https://discord.gg/xBy4PfQ3SZ">Join the discord</a>
 			</div>
@@ -61,6 +57,6 @@
 	</div>
 	<hr class="border-b-[1px] border-t-0 border-[rgba(0,0,0,0.1)] bg-transparent" />
 	<div class="max-w-screen-xl mx-auto px-5">
-		<p class="text-[#495A7F] mt-10">© 2021 - Bizarre Biomes.</p>
+		<p class="text-[#495A7F] mt-10">© 2022 - Bizarre Biomes.</p>
 	</div>
 </section>

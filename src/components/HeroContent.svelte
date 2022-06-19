@@ -1,7 +1,7 @@
 <script lang="ts">
 	import ProgressBar from './ProgressBar.svelte';
 	export let title = 'Welcome to Bizarre Biomes';
-	export let content = 'An NFT project for duck holders, and newcomers alike.';
+	export let content = 'Your Biome is a virtual meta gallery to show off your NFT collection to the public.';
 </script>
 
 <div
