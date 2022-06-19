@@ -1,7 +1,7 @@
 <script lang="ts">
-	let mintTime = '01/01/2022, 10:00AM GMT';
-	let mintCount = 2048;
-	let mintPrice = 3000;
+    let mintTime = '02/07/2022 @ 00:01 UTC' //  this will be a block in the future
+    let mintCount = 3000
+    let mintPrice = 2000
 </script>
 
 <div class="bg-white rounded-lg {$$restProps.class} max-w-full w-full sm:w-auto">
