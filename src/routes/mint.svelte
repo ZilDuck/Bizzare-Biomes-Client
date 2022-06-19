@@ -23,8 +23,7 @@
 			<div class="max-w-full md:max-w-[412px]">
 				<h2 class="text-4xl mb-5 font-semibold text-white">It's time to create a new biome.</h2>
 				<p class="font-normal text-base text-white">
-					The wait is over. Use the card on the right-hand side to mint yourself a biome. Once
-					they’re gone, they’re gone. So grab them as quick as you can!
+					The wait is over. Use the card on the right-hand side to mint yourself a Biome.
 				</p>
 			</div>
 		</div>

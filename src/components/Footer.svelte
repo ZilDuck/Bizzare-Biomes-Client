@@ -57,6 +57,6 @@
 	</div>
 	<hr class="border-b-[1px] border-t-0 border-[rgba(0,0,0,0.1)] bg-transparent" />
 	<div class="max-w-screen-xl mx-auto px-5">
-		<p class="text-[#495A7F] mt-10">© 2021 - Bizarre Biomes.</p>
+		<p class="text-[#495A7F] mt-10">© 2022 - Bizarre Biomes.</p>
 	</div>
 </section>

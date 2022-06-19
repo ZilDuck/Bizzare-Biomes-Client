@@ -84,12 +84,8 @@
 				<h1 class="text-3xl md:text-4xl mb-5 font-semibold text-white">
 					From the skyline to the pits of Mordor, come and be a neighbour and enjoy the view.
 				</h1>
-				<p class="font-normal text-base text-white">
-					Welcome to the newest project from the team behind Ducks and Zilkroad. A collection of
-					2000 different biomes.
-				</p>
 				<div class="flex flex-row flex-wrap my-5 gap-x-5">
-					<a href={'/mint'} class="btn btn-primary">Mint a new biome</a>
+					<a href={'/mint'} class="btn btn-primary">Mint a Biome</a>
 					<button class="btn btn-secondary">View all biomes</button>
 				</div>
 			</div>
@@ -107,12 +103,10 @@
 	<div class="max-w-screen-xl mx-auto mt-[-1px] pt-28 text-primary">
 		<div class="max-w-screen-xl flex justify-center items-center flex-col mx-auto px-5">
 			<h1 class="font-semibold text-3xl  md:text-4xl  max-w-[1016px] text-center">
-				It’s finally time to view the NFTs in your wallet. By owning a Bizarre Biome, you can
-				 view your owned NFTs.
+				It’s finally time to show-off the NFTs in your wallet to the world!
 			</h1>
 			<p class="mt-5 text-base max-w-[600px] text-center ">
-				A feature that is exclusive to Bizarre Biome’s. You can now see every NFT that you own. This
-				includes both ZRC-1* and ZRC-6 based NFTs.
+				Using the latest indexer technology Biomes are able to dynamically load and keep track of what NFT's are in your wallet. This includes both ZRC-1* and ZRC-6 based NFTs!
 			</p>
 		</div>
 		<div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-20 mx-auto px-5">
@@ -138,7 +132,7 @@
 	<div class="max-w-screen-xl py-28 mx-auto px-5">
 		<div class="max-w-screen-xl flex mx-auto justify-center items-center flex-col text-white ">
 			<h1 class="font-semibold text-3xl  md:text-4xl max-w-[496px] text-center">
-				A title on the latest NFTs minted
+				View the latest Biomes minted
 			</h1>
 			<p class="mt-5 text-base max-w-[600px] text-center">
 				Welcome to the newest project from the team behind Ducks and Zilkroad. A collection of 2000
@@ -158,10 +152,6 @@
 			<h1 class="font-semibold text-3xl  md:text-4xl max-w-[496px] text-center">
 				Frequently asked questions
 			</h1>
-			<p class="mt-5 text-base max-w-[600px] text-center">
-				Welcome to the newest project from the team behind Ducks and Zilkroad. A collection of 2000
-				different worlds from the multiverse.
-			</p>
 		</div>
 		<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-20">
 			<div>
@@ -264,12 +254,8 @@
 	<div class="max-w-screen-xl mx-auto mt-[-1px] pt-28 text-primary">
 		<div class="max-w-screen-xl flex justify-center items-center flex-col mx-auto px-5">
 			<h1 class="font-semibold text-3xl  md:text-4xl text-white max-w-[496px] text-center">
-				A creation from the team behind Ducks.
+				Duck team.
 			</h1>
-			<p class="mt-5 text-base max-w-[600px] text-center text-white">
-				For a great project, you need a great team. Luckily, we have that with these fine people
-				shown below.
-			</p>
 		</div>
 		<div class="grid grid-cols-2 sm:grid-cols-3 gap-6 mt-20 mx-auto px-5">
 			{#each team as teamMember}

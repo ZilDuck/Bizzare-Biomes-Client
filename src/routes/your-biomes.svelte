@@ -41,7 +41,7 @@
 	<div
 		class="max-w-screen-xl flex mx-auto justify-center items-center flex-col text-white mt-16 mb-[120px] z-0"
 	>
-		<h1 class="w-full font-black text-7xl mt-28 md:mt-[230px] mb-5 text-center px-5">Your biomes</h1>
+		<h1 class="w-full font-black text-7xl mt-28 md:mt-[230px] mb-5 text-center px-5">Your Biomes</h1>
 		<div class="flex items-center">
 			<div class="w-[40px] h-[40px] bg-white rounded-[100%] mr-5" />
 			<p class="text-white">Owned by <a href="https://viewblock.io/zilliqa/address/{$wallet.bech32}" target="_blank" class="underline">{truncatedWallet}</a></p>
