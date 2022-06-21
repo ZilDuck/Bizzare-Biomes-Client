@@ -9,23 +9,28 @@
 	import BiomeCard from '../components/BiomeCard.svelte'
 	let nightSky = '/assets/backgrounds/Night sky.png'
 	let comp1 = '/assets/compositions/1.png'
+	export let userBiomes:any[] = []
 
 
   $: truncatedWallet = $wallet.bech32
     ? `${$wallet.bech32.slice(0, 6)}...${$wallet.bech32.slice(-6)}`
     : false
 
-	let userBiomes:any[] = []
-
+	// This gets populated after page load, I can't figure out how to
+	// Do this in the module script block above
+	// but I was getting errors of things being undefined
+	// 		Following Zilkroad-Client/src/routes/wallet/[walletId]/index.svelte
 	const getBiomes = async (x:string) => {
-		const { response } = await fetch(`/api/biomes/${x}.json`).then((r) => r.json())
+		const response = await fetch(`/api/biomes/${x}.json`).then((r) => r.json())
 		userBiomes = response
+		console.log("Wtf: %j", userBiomes)
 	}
 
 	const unsubscribe = wallet.subscribe(value => {
 		if (value.base16) {
 			getBiomes(value.base16)
 		}
+		console.log("UserBiomes: ", userBiomes.length)
 	})
 
 	onDestroy(unsubscribe)
@@ -51,7 +56,7 @@
 
 <section class="bg-[#447197]">
 	<div class="flex max-w-screen-xl ">
-		{#if userBiomes}
+		{#if userBiomes.length > 0}
 			{#each userBiomes as biome}
 				<div class="relative mb-5 mx-5">
 					<BiomeCard class=" self-center" id={biome.id} biome={biome} />

@@ -1,4 +1,6 @@
-const baseURL: string = process.env.BIOMES_API ?? 'https://api.bizarrebiomes.com';
+import { variables } from '../variables.js'
+
+export const { baseURL } = variables
 
 type endPoints = 'biomes-list' | 'biomes' | 'street' | string;
 
