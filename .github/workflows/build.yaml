@@ -29,6 +29,30 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Get release label
+        uses: actions-ecosystem/action-release-label@v1
+        id: release-label
+        if: ${{ github.event_name == "push" }}
+
+      - name: Get latest tag
+        uses: actions-ecosystem/action-get-latest-tag@v1
+        id: get-latest-tag
+        if: ${{ steps.release-label.outputs.level != null }}
+
+      - name: Bump version
+        uses: actions-ecosystem/action-bump-semver@v1
+        id: bump-semver
+        if: ${{ steps.release-label.outputs.level != null }}
+        with:
+          current_version: ${{ steps.get-latest-tag.outputs.tag }}
+          level: ${{ steps.release-label.outputs.level }}
+
+      - uses: actions-ecosystem/action-push-tag@v1
+        if: ${{ steps.release-label.outputs.level != null }}
+        with:
+          tag: ${{ steps.bump-semver.outputs.new_version }}
+          message: '${{ steps.bump-semver.outputs.new_version }}: PR #${{ github.event.pull_request.number }} ${{ github.event.pull_request.title }}'
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -40,23 +64,11 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
-      - name: Get previous tag
-        id: previousTag
-        uses: WyriHaximus/github-action-get-previous-tag@v1
-        with:
-          fallback: 0.0.0
-
-      - name: Get next semantic version
-        id: semVars
-        uses: WyriHaximus/github-action-next-semvers@v1
-        with:
-          version: ${{ steps.previousTag.outputs.tag }}
-
       - name: Set commit tag
         id: commitTag
         run: |
-          [[ "${{ github.event_name }}" = "pull_request" ]] && echo "::set-output name=tag::${{ steps.semVars.outputs.patch }}-$(git rev-parse --short HEAD)" || true
-          [[ "${{ github.event_name }}" = "push" ]] && echo "::set-output name=tag::${{ steps.semVars.outputs.patch }}" || true
+          [[ "${{ github.event_name }}" = "pull_request" ]] && echo "::set-output name=tag::$(git rev-parse --short HEAD)" || true
+          [[ "${{ github.event_name }}" = "push" ]] && echo "::set-output name=tag::${{ steps.bump-semver.outputs.new_version }}" || true
 
       - name: Build, tag, and push image to Amazon ECR
         id: build-image
@@ -67,13 +79,22 @@ jobs:
           docker push $ECR_REGISTRY/$ECR_REPOSITORY/$CONTAINER_NAME:${{ steps.commitTag.outputs.tag }}
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY/$CONTAINER_NAME:${{ steps.commitTag.outputs.tag }}"
 
+      - uses: dev-drprasad/delete-tag-and-release@v0.2.0
+        with:
+          delete_release: true
+          tag_name: ${{ steps.commitTag.outputs.tag }}
+
       - name: Create a GitHub release
         if: github.event_name == 'push'
         uses: ncipollo/release-action@v1
         with:
-          tag: ${{ steps.semVars.outputs.patch }}
-          name: Release ${{ steps.semVars.outputs.v_patch }}
+          tag: ${{ steps.bump-semver.outputs.new_version }}
+          name: Release ${{ steps.bump-semver.outputs.new_version }}
           token: ${{ secrets.ACCESS_TOKEN }}
+
+      - name: Extract branch name
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
 
       - name: Deploy testnet
         run: |
@@ -82,4 +103,4 @@ jobs:
             -H "Accept: application/vnd.github.v3+json" \
             -H "Authorization: Bearer ${{ secrets.ACCESS_TOKEN }}" \
             https://api.github.com/repos/${{ github.repository }}/actions/workflows/deploy.yaml/dispatches \
-            -d '{"ref":"master", "inputs":{"environment":"testnet", "tag":"${{ steps.commitTag.outputs.tag }}"}}'
+            -d '{"ref":"${{ steps.extract_branch.outputs.branch }}", "inputs":{"environment":"testnet", "tag":"${{ steps.commitTag.outputs.tag }}"}}'
