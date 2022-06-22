@@ -209,6 +209,7 @@
 				</ul>
 			</div>
 		</div>
+		<div>
 			<div>
 				<h2 class="font-semibold text-2xl">So is this project finished?</h2>
 				<p class="mt-5 ">

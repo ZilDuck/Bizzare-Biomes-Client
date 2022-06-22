@@ -80,31 +80,27 @@
 				<p class="mt-5 ">
 					We looked across the NFD distribution for a fair way to distribute the airdrop to addresses which support our projects.
 					All calculations include the ZRC-1 and ZRC-6 NFD contracts, excluding the migrator address which holds the ZRC-6's in escrow for ZRC-1 holders, snapshot taken on 09/06/2022 @ 1:25 UTC.
-
-					<ul>
-						<li>Holding 1 NFD = 1 BIOME = 963 addresses valid </li>
-						<li>Everyone in DUCK LP = 4 BIOME = 25 addresses valid </li>
-						<li>Holding more than 10 NFD = 1 BIOME = 74 addresses valid </li>
-						<li>Holding more than 20 NFD = 3 BIOME = 28 addresses valid </li>
-						<li>Holding more than 50 NFD = 4 BIOME = 16 addresses valid </li>
-						<li>Holding more than 90 NFD = 11 BIOME = 2 addresses valid </li>
-						</ul>
-	
-						Airdrops have been sent out so sign into bizarrebiomes.com and click your address to see 'Your Biomes', or check viewblock for incoming NFT transactions.
-					</p>
-				</div>
-				<div>
-					<h2 class="font-semibold text-2xl">How was the distribution calculated?</h2>
-					<p class="mt-5 ">
-					<ul>
-						<li>43.3% = Airdrop as above</li>
-						<li>53.3% = Public sale</li>
-						<li>3.4% = Marketing</li>
-						<li>0% = Team</li>
-					</ul>
-					</p>
-				</div>
 				</p>
+				<ul>
+					<li>Holding 1 NFD = 1 BIOME = 963 addresses valid </li>
+					<li>Everyone in DUCK LP = 4 BIOME = 25 addresses valid </li>
+					<li>Holding more than 10 NFD = 1 BIOME = 74 addresses valid </li>
+					<li>Holding more than 20 NFD = 3 BIOME = 28 addresses valid </li>
+					<li>Holding more than 50 NFD = 4 BIOME = 16 addresses valid </li>
+					<li>Holding more than 90 NFD = 11 BIOME = 2 addresses valid </li>
+				</ul>
+				<p>
+					Airdrops have been sent out so sign into bizarrebiomes.com and click your address to see 'Your Biomes', or check viewblock for incoming NFT transactions.
+				</p>
+			</div>
+			<div>
+				<h2 class="font-semibold text-2xl">How was the distribution calculated?</h2>
+				<ul class="mt-5">
+					<li>43.3% = Airdrop as above</li>
+					<li>53.3% = Public sale</li>
+					<li>3.4% = Marketing</li>
+					<li>0% = Team</li>
+				</ul>
 			</div>
 			<div>
 				<h2 class="font-semibold text-2xl">So is this project finished?</h2>
