@@ -1,6 +1,8 @@
-import { variables } from '../variables.js'
+import { variables } from '../variables.js';
 
-export const { baseURL } = variables
+export const { baseURL } = variables;
+
+console.log('Base URL', baseURL);
 
 type endPoints = 'biomes-list' | 'biomes' | 'street' | string;
 
