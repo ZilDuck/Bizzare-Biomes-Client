@@ -42,7 +42,7 @@
 		<div class="max-w-screen-xl flex mx-auto justify-center items-center flex-col  ">
 			<h1 class="font-semibold text-4xl max-w-[496px] text-center">Frequently asked questions</h1>
 			<p class="mt-5 text-base max-w-[600px] text-center">
-				Welcome to the newest project from the team behind Ducks and Zilkroad. A collection of 2000
+				Welcome to the newest project from the team behind Ducks and Zilkroad. A collection of 3000
 				different worlds from the multiverse.
 			</p>
 		</div>
