@@ -1,4 +1,4 @@
-<a href="https://discord.com/invite/Bizarrebiomes" class={$$restProps.class}>
+<a href="https://twitter.com/BizzareBiomes" class={$$restProps.class}>
 	<svg
 		class={$$restProps.class}
 		width="20"

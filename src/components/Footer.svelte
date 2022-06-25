@@ -33,7 +33,7 @@
 			</ul>
 		</div>
 		<div>
-			<h2 class="font-semibold mb-5 text-[#495A7F]">Other</h2>
+			<h2 class="font-semibold mb-5 text-[#495A7F]">Soon ™</h2>
 			<ul>
 				<a href="https://zilkroad.io" class="text-[#495A7F] mb-[16px] block">Zilkroad</a>
 			</ul>
