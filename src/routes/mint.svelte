@@ -1,9 +1,23 @@
+<script context="module">
+
+	export async function load({ fetch }) {
+		const {mintCount} = await fetch(`/api/mint.json`).then((r) => r.json())
+		return {
+			props: {
+				currentMinted: mintCount
+			}
+		}
+	}
+
+</script>
+
 <script lang="ts">
 	import MintCard from '../components/MintCard.svelte';
 	import Footer from '../components/Footer.svelte';
 	import HeroContent from '../components/HeroContent.svelte';
 	let zeldaMoon = '/assets/backgrounds/Dark moon.png';
 	let gemFields = '/assets/foregrounds/Gem fields.png';
+	export let currentMinted
 </script>
 
 <svelte:head>
@@ -29,7 +43,7 @@
 		</div>
 		<div class="px-5 sm:px-0 mt-5 md:mt-0">
 			<div>
-				<MintCard class="max-w-full" />
+				<MintCard currentMinted="{currentMinted}" class="max-w-full" />
 			</div>
 		</div>
 	</div>

@@ -1,3 +1,5 @@
+
+
 <script lang="ts">
 	import ProgressBar from './ProgressBar.svelte';
   	import walletStore from '../store/wallet'
@@ -5,7 +7,7 @@
     let mintTime = '02/07/2022 @ 00:01 UTC' //  this will be a block in the future
     let mintCount = 3000
     let mintPrice = 2000
-    let currentMinted = 0 // TODO read NFT token_id
+    export let currentMinted = 0
     let currentMintCount = 1;
 
 
