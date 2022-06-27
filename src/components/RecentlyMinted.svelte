@@ -17,6 +17,6 @@
 
 <div class="flex flex-col {$$restProps.class}">
 	{#each recentlyMinted as nft}
-		<img src={nft.quick_resource} alt="Loading biome" class="min-h-28 bg-green-200 " />
+		<img src={nft.quick_resource} alt="Loading Biome" class="min-h-28 bg-green-200 " />
 	{/each}
 </div>
