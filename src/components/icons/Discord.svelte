@@ -1,5 +1,5 @@
 
-<a href="https://discord.com/invite/Bizarrebiomes" class="{$$restProps.class}">
+<a href="https://discord.gg/xBy4PfQ3SZ" class="{$$restProps.class}">
   <svg
     class="{$$restProps.class}"
     width="20"
