@@ -36,14 +36,11 @@
 		class="max-w-screen-xl flex justify-center items-center flex-col text-primary mx-auto px-5"
 	>
 		<h1 class="w-full font-black text-[72px]  text-center">{street}</h1>
-		<p class="mt-5 text-xl">An NFT project for duck holders, and newcomers alike.</p>
+		<p class="mt-5 text-xl">Thinking of moving in or just checking the place out?</p>
 		<div class="flex flex-row my-5 gap-x-5 w-full max-w-screen-xl justify-start">
 			<a href="/directory" class="btn btn-primary">Go back to all streets</a>
 		</div>
 		<div class="max-w-screen-xl w-full bg-[#495A7F] p-10 pb-20">
-			<!-- <div class="w-full border-b-[1px] border-b-[#647FBB] pb-10 mb-10">
-				<h2 class="text-4xl text-white font-semibold">Biome directory</h2>
-			</div> -->
 			<ul class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
 				{#if biomesList}
 					{#each biomesList as biome}

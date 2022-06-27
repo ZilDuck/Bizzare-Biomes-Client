@@ -73,7 +73,7 @@
 		<h1 class="w-full font-black text-5xl sm:text-7xl mt-[160px] sm:mt-[230px] text-center">
 			Welcome to Bizarre Biomes.
 		</h1>
-		<h2 class="mt-5 text-xl text-center">An NFT project for duck holders, and newcomers alike.</h2>
+		<h2 class="mt-5 text-xl text-center">Yo dawg, we heard you like NFT's so we made an NFT for your NFT's</h2>
 		<MintInfo class="mt-10 sm:mt-5" />
 	</div>
 </section>
@@ -96,7 +96,7 @@
 				</p>
 				<div class="flex flex-row flex-wrap my-5 gap-x-5">
 					<a href={'/mint'} class="btn btn-primary">Mint a Biome</a>
-					<button class="btn btn-secondary">View all biomes</button>
+					<button class="btn btn-secondary">View all Biomes</button>
 				</div>
 			</div>
 		</div>
@@ -170,28 +170,12 @@
 					Why develop another NFT project, what makes Biomes special?
 				</h2>
 				<p class="mt-5 ">
-					We spent a lot of time developing an NFT indexer which purpose is to store all the blocks
-					and dynamically update and calculates what NFT's you are holding in your wallet at any
+					We spent a lot of time developing an NFT indexer which calculates what NFTs you are holding in your wallet at any
 					given time. We wanted to utilise the ability of the indexer to show your latest NFT, with
 					the concept of a virtual gallery of holders. What better way than to invite everyone
 					holding an NFT to the gallery! Biomes also fulfills one of our original objectives to
 					continue to develop value for NFD holders.
 				</p>
-			</div>
-			<div>
-				<h2 class="font-semibold text-2xl">OK, so I have a Biome, now what?</h2>
-				<p class="mt-5 ">
-					We spent a lot of time developing an NFT indexer which purpose is to store all the blocks
-					and dynamically update and calculate what NFT's you are holding in your wallet at any
-					given time. We wanted to utilise the novel ability of the indexer to show your latest NFT,
-					with the concept of a virtual gallery of holders. What better way than to invite everyone
-					holding an NFT to the gallery! Keep it, sell it, do whatever you want with it - it's our
-					gift!
-				</p>
-			</div>
-			<div>
-				<h2 class="font-semibold text-2xl">When is the mint?</h2>
-				<p class="mt-5 ">Block xxxxxx estimated to be 00:01 on the 2nd July UTC.</p>
 			</div>
 			<div>
 				<h2 class="font-semibold text-2xl">What is the price of a Biome?</h2>
@@ -203,7 +187,7 @@
 					We looked across the NFD distribution for a fair way to distribute the airdrop to
 					addresses which support our projects. All calculations include the ZRC-1 and ZRC-6 NFD
 					contracts, excluding the migrator address which holds the ZRC-6's in escrow for ZRC-1
-					holders, snapshot taken on 09/06/2022 @ 1:25 UTC. Airdrops have been sent out so sign into
+					holders. The snapshot was taken on 09/06/2022 @ 1:25 UTC. Airdrops have been sent out so sign into
 					bizarrebiomes.com and click your address to see 'Your Biomes', or check viewblock for
 					incoming NFT transactions.
 				</p>
