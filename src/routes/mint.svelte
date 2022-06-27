@@ -35,7 +35,7 @@
 	<div class="max-w-screen-xl grid md:grid-cols-2 grid-cols-1 items-center mx-auto px-5">
 		<div class="px-5 sm:px-0 mt-10 md:mt-0 w-full flex justify-center">
 			<div class="max-w-full md:max-w-[412px]">
-				<h2 class="text-4xl mb-5 font-semibold text-white">It's time to create a new biome.</h2>
+				<h2 class="text-4xl mb-5 font-semibold text-white">It's time to create a new Biome.</h2>
 				<p class="font-normal text-base text-white">
 					The wait is over. Use the card on the right-hand side to mint yourself a Biome.
 				</p>
