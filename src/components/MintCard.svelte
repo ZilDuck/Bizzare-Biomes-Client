@@ -38,10 +38,6 @@ async function MintTokens(){
 	<div class="px-[20px] mx-auto justify-center">
 		<div class="py-[20px] flex flex-row max-w-max">
 			<div class="flex flex-col gap-1 pr-5 mr-5 border-r border-gray-200">
-				<h6 class="text-gray-300 font-semibold text-base">Mint time</h6>
-				<h5 class="text-gray-700 font-normal text-base">{mintTime}</h5>
-			</div>
-			<div class="flex flex-col gap-1 pr-5 mr-5 border-r border-gray-200">
 				<h6 class="text-gray-300 font-semibold text-base">Mint count</h6>
 				<h5 class="text-gray-700 font-normal text-base">{mintCount}</h5>
 			</div>
