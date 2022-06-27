@@ -18,6 +18,6 @@
 			<h6 class="text-gray-300 font-semibold text-base">Mint price</h6>
 			<h5 class="text-gray-700 font-normal text-base">{mintPrice} Zil</h5>
 		</div>
-		<a href={'/mint'} class="btn btn-primary mb-0 text-center">Mint a new biome</a>
+		<a href={'/mint'} class="btn btn-primary mb-0 text-center">Mint a new Biome</a>
 	</div>
 </div>
