@@ -36,7 +36,7 @@
 		class="max-w-screen-xl flex justify-center items-center flex-col text-primary mx-auto px-5"
 	>
 		<h1 class="w-full font-black text-[72px]  text-center">{street}</h1>
-		<p class="mt-5 text-xl">An NFT project for duck holders, and newcomers alike.</p>
+		<p class="mt-5 text-xl">Thinking of moving in or just checking the place out?</p>
 		<div class="flex flex-row my-5 gap-x-5 w-full max-w-screen-xl justify-start">
 			<a href="/directory" class="btn btn-primary">Go back to all streets</a>
 		</div>
