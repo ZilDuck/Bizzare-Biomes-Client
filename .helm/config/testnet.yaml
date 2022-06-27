@@ -1,7 +1,7 @@
 namespace: biomes-testnet
 
 biomes:
-  api: http://staging-api.bizarrebiomes.com
+  api: https://staging-api.bizarrebiomes.com
 
 ingress:
   host: staging.bizarrebiomes.com

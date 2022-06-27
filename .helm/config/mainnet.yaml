@@ -1,7 +1,7 @@
 namespace: biomes-mainnet
 
 biomes:
-  api: http://api.bizarrebiomes.com
+  api: https://api.bizarrebiomes.com
 
 ingress:
   host: bizarrebiomes.com
