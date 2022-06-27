@@ -94,7 +94,7 @@
 		alt="Floating island"
 		class="bg-[#90ebd0] absolute w-full top-20 left-0"
 	/>
-	<HeroContent title={nftName} content="An NFT project for duck holders, and newcomers alike." />
+	<HeroContent title={nftName} content="Looks rare." />
 </section>
 
 <section class="bg-[#90ebd0]">
