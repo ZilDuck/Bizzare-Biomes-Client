@@ -90,9 +90,9 @@ const createWalletStore = () => {
   const quantity = parseInt(currentMintCount)
   const nonce = fetchNonce()
   console.log(`mintVouchers - ${wallet.base16}/${quantity}/${nonce}`)
-  const contract = contracts.at('0x0b633edca3afcc9b2505c2dea092621fdf4c3368')
+  const contract = contracts.at('0xe9a3b0779af1dfa756187f333dba88e8187d21e9')
 
-  const costForOne = 100000000000000
+  const costForOne = 2000000000000000
   const totalCost = costForOne * quantity
   const gasLimit = 4000 * quantity
 
@@ -100,7 +100,7 @@ const createWalletStore = () => {
   const pair = [base16, ""]
   const listOfPairs = Array(quantity).fill(pair)
   
-  const VERSION = bytes.pack(333, 1)
+  const VERSION = bytes.pack(1, 1)
   const tx = await contract.call('ProxyBatchMint',
   [
     {

@@ -13,7 +13,7 @@
 				Come be a neighbour and join the discord.
 			</h1>
 			<div class="flex flex-row my-5 gap-x-5">
-				<a class="btn btn-primary" href="https://discord.gg/xBy4PfQ3SZ">Hey neighbour!</a>
+				<a class="btn btn-primary" href="https://discord.gg/xBy4PfQ3SZ" target="_blank">Hey neighbour!</a>
 			</div>
 		</div>
 	</div>
@@ -29,7 +29,7 @@
 			<h2 class="font-semibold mb-5 text-[#495A7F]">Links</h2>
 			<ul>
 				<li><a href="/mint" class="text-[#495A7F] mb-[16px] block">Mint an NFT</a></li>
-				<li><a href="/directory" class="text-[#495A7F] mb-[16px] block">View all biomes</a></li>
+				<li><a href="/directory" class="text-[#495A7F] mb-[16px] block">View all Biomes</a></li>
 			</ul>
 		</div>
 		<div>

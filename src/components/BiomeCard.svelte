@@ -33,7 +33,7 @@
 <a href="/directory/id/{id}">
 	<img
 		src={image}
-		alt="Loading biome"
+		alt="Loading Biome"
 		class="{$$restProps.class} md:min-h-[200px] border border-[#495A7F]  w-full"
 	/>
 </a>
