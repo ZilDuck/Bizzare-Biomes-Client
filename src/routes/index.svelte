@@ -73,7 +73,7 @@
 		<h1 class="w-full font-black text-5xl sm:text-7xl mt-[160px] sm:mt-[230px] text-center">
 			Welcome to Bizarre Biomes.
 		</h1>
-		<h2 class="mt-5 text-xl text-center">An NFT project for duck holders, and newcomers alike.</h2>
+		<h2 class="mt-5 text-xl text-center">Yo dawg, we heard you like NFT's so we made an NFT for your NFT's</h2>
 		<MintInfo class="mt-10 sm:mt-5" />
 	</div>
 </section>
