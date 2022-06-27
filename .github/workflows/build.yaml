@@ -74,7 +74,7 @@ jobs:
             github.rest.git.createRef({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              ref: 'refs/tags/${{ steps.semVars.outputs.patch }}',
+              ref: 'refs/tags/${{ steps.commitTag.outputs.tag }}',
               sha: context.sha,
               debug: true
             })
