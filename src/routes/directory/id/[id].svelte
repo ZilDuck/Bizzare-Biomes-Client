@@ -3,10 +3,10 @@
 		const { id } = params;
 		const page = url.searchParams.get('page') ?? 1;
 
-		const {metadata} = await fetch(`/api/biome/${id}.json`).then((r) => r.json())
-		const {pagination, ownedNFTs}  = await fetch(
+		const { metadata } = await fetch(`/api/biome/${id}.json`).then((r) => r.json());
+		const { pagination, ownedNFTs } = await fetch(
 			`/api/address/${metadata.base16}.json?page=${page}&size=20`
-		).then((r) => r.json())
+		).then((r) => r.json());
 		const truncatedWallet = metadata.bech32
 			? `${metadata.bech32.slice(0, 6)}...${metadata.bech32.slice(-6)}`
 			: '';
@@ -69,9 +69,9 @@
 
 	async function handlePageChange(event: any) {
 		const page = event.detail.currentPage;
-		({pagination, ownedNFTs} = await fetch(
-				`/api/address/${metadata.base16}.json?page=${page}&size=20`
-		).then((r) => r.json()))
+		({ pagination, ownedNFTs } = await fetch(
+			`/api/address/${metadata.base16}.json?page=${page}&size=20`
+		).then((r) => r.json()));
 
 		currentPage = page;
 		replaceStateWithQuery({
@@ -112,13 +112,21 @@
 		>
 			<div class="flex items-center">
 				<div class="w-[40px] h-[40px] bg-[#495A7F] rounded-[100%] mr-5" />
-				<p class="text-[#495A7F]">Owned by <a href="https://viewblock.io/zilliqa/address/{metadata.bech32}" target="_blank" class="underline">{metadata.bech32}</a></p>
+				<p class="text-[#495A7F]">
+					Owned by <a
+						href="https://viewblock.io/zilliqa/address/{metadata.bech32}"
+						target="_blank"
+						class="underline">{metadata.bech32}</a
+					>
+				</p>
 			</div>
 		</div>
-		<div class="flex items-center mt-5 mb-[120px]">
+		<div class="flex items-center mt-5 mb-[120px] flex-wrap">
 			{#if biomeData.data.attributes}
 				{#each biomeData.data.attributes as attribute}
-					<div class="bg-white rounded-lg flex justify-between items-center py-[12px] px-5 mr-5">
+					<div
+						class="bg-white rounded-lg flex justify-between items-center py-[12px] px-5 mr-5 mb-5 sm:mb-0"
+					>
 						<p><span class="text-[#CDCDCD]">{attribute.trait_type}:</span> {attribute.value}</p>
 					</div>
 				{/each}
@@ -129,7 +137,11 @@
 			class="flex flex-col max-w-screen-xl mx-5 mt-5 space-y-12 xl:mx-auto md:grid md:grid-cols-2 md:space-y-0 md:gap-6 lg:grid-cols-3 xl:grid-cols-4"
 		>
 			<h2 class="md:col-span-2 lg:col-span-3 xl:col-span-4 text-[#495A7F] font-semibold text-2xl">
-				<a href="https://viewblock.io/zilliqa/address/{metadata.bech32}" target="_blank" class="underline">{truncatedWallet}</a>’s owned NFTs
+				<a
+					href="https://viewblock.io/zilliqa/address/{metadata.bech32}"
+					target="_blank"
+					class="underline">{truncatedWallet}</a
+				>’s owned NFTs
 			</h2>
 			<h2 class="text-[#495A7F] mt-10 text-xl md:col-span-2 lg:col-span-3 xl:col-span-4">
 				Showing <span class="text-black"
