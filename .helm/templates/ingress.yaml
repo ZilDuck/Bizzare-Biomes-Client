@@ -1,16 +1,20 @@
+{{- $port := .Values.port -}}
+{{- $serviceName := .Chart.Name -}}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: {{ .Chart.Name }}
 spec:
   rules:
-    - host: {{ .Values.ingress.host }}
+{{- range $host := .Values.ingress.hosts }}
+    - host: {{ $host | quote }}
       http:
         paths:
           - backend:
               service:
-                name: {{ .Chart.Name }}
+                name: {{ $serviceName }}
                 port:
-                  number: {{ .Values.port }}
+                  number: {{ $port }}
             path: /
             pathType: Prefix
+{{- end }}
