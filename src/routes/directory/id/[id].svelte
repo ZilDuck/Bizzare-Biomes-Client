@@ -122,8 +122,8 @@
 			</div>
 		</div>
 		<div class="flex items-center mt-5 mb-[120px] flex-wrap">
-			{#if biomeData.data.attributes}
-				{#each biomeData.data.attributes as attribute}
+			{#if biomeData.attributes}
+				{#each biomeData.attributes as attribute}
 					<div
 						class="bg-white rounded-lg flex justify-between items-center py-[12px] px-5 mr-5 mb-5 sm:mb-0"
 					>

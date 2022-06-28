@@ -96,7 +96,7 @@
 				</p>
 				<div class="flex flex-row flex-wrap my-5 gap-x-5">
 					<a href={'/mint'} class="btn btn-primary">Mint a Biome</a>
-					<button class="btn btn-secondary">View all Biomes</button>
+					<a href={'/directory'} class="btn btn-secondary">View all Biomes </a>
 				</div>
 			</div>
 		</div>
