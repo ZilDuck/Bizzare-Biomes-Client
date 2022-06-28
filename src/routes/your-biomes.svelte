@@ -54,7 +54,7 @@
 </section>
 
 <section class="bg-[#447197]">
-	<div class="flex max-w-screen-xl justify-center m-auto">
+	<div class="flex max-w-screen-xl justify-center m-auto flex-wrap">
 		{#if userBiomes.length > 0}
 			{#each userBiomes as biome}
 				<div class="relative mb-5 mx-5">
