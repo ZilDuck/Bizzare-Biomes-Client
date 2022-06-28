@@ -4,4 +4,6 @@ biomes:
   api: https://api.bizarrebiomes.com
 
 ingress:
-  host: bizarrebiomes.com
+  hosts:
+   - bizarrebiomes.com
+   - www.bizarrebiomes.com
