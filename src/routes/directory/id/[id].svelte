@@ -11,10 +11,10 @@
 			? `${metadata.bech32.slice(0, 6)}...${metadata.bech32.slice(-6)}`
 			: '';
 
-		const biomeData = metadata.biome;
+		const biomeData = metadata;
 
-		const nftImage = biomeData.resources[0].uri;
-		const biomeName = biomeData.name;
+		const nftImage = metadata.biomeData.resources[0].uri;
+		const biomeName = metadata.biomeData.name;
 
 		return {
 			props: {
