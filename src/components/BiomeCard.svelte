@@ -3,14 +3,12 @@
 	type Biome = {
 		owner: string;
 		id: number;
-		data: {
-			attributes: [];
-			resources: [
-				{
-					uri: string;
-				}
-			];
-		};
+		attributes: [];
+		resources: [
+			{
+				uri: string;
+			}
+		];
 	};
 
 	export let biome: Biome;
@@ -25,7 +23,7 @@
 			return `https://cloudflare-ipfs.com/ipfs/${ipfs.split('ipfs://')[1]}`;
 		};
 
-		if (biome) image = resolveIPFS(biome.data!.resources![0]!.uri);
+		if (biome) image = resolveIPFS(biome!.resources![0]!.uri);
 		if (imageText) image = resolveIPFS(imageText);
 	});
 </script>
