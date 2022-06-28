@@ -45,7 +45,7 @@
 </script>
 
 <div class="flex flex-col mb-5">
-    <img src={image} alt="Nft" class="mb-5 rounded-lg bg-white bg-opacity-80 aspect-square" />
+    <img src={image} alt="Nft" class="mb-5 rounded-lg bg-white bg-opacity-80 aspect-square object-contain" />
     <h3 class="text-[#495A7F] text-xl mb-[10px] font-semibold">#{id}</h3>
     <p class="text-[#495A7F]">{collection}</p>
 </div>
