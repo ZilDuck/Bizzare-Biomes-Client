@@ -13,8 +13,8 @@
 
 		const biomeData = metadata;
 
-		const nftImage = metadata.biomeData.resources[0].uri;
-		const biomeName = metadata.biomeData.name;
+		const nftImage = metadata.resources[0].uri;
+		const biomeName = metadata.name;
 
 		return {
 			props: {
