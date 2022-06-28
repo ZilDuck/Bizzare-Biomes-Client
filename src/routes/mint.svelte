@@ -64,7 +64,7 @@
 			<div>
 				<h2 class="font-semibold text-2xl">Why develop another NFT project, what makes Biomes special?</h2>
 				<p class="mt-5 ">
-					We spent a lot of time developing an NFT indexer which purpose is to store all the blocks and dynamically update and calculates what NFT's you are holding in your wallet at any given time.
+					We spent a lot of time developing an NFT indexer which purpose is to store all the blocks and dynamically update and calculates what NFTs you are holding in your wallet at any given time.
 					We wanted to utilise the ability of the indexer to show your latest NFT, with the concept of a virtual gallery of holders. What better way than to invite everyone holding an NFT to the gallery!
 					Biomes also fulfills one of our original objectives to continue to develop value for NFD holders.
 				</p>
@@ -72,7 +72,7 @@
 			<div>
 				<h2 class="font-semibold text-2xl">OK, so I have a Biome, now what?</h2>
 				<p class="mt-5 ">
-					We spent a lot of time developing an NFT indexer which purpose is to store all the blocks and dynamically update and  calculate what NFT's you are holding in your wallet at any given time.
+					We spent a lot of time developing an NFT indexer which purpose is to store all the blocks and dynamically update and  calculate what NFTs you are holding in your wallet at any given time.
 					We wanted to utilise the novel ability of the indexer to show your latest NFT, with the concept of a virtual gallery of holders. What better way than to invite everyone holding an NFT to the gallery!
 					Keep it, sell it, do whatever you want with it - it's our gift!
 				</p>

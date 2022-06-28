@@ -73,7 +73,7 @@
 		<h1 class="w-full font-black text-5xl sm:text-7xl mt-[160px] sm:mt-[230px] text-center">
 			Welcome to Bizarre Biomes.
 		</h1>
-		<h2 class="mt-5 text-xl text-center">Yo dawg, we heard you like NFT's so we made an NFT for your NFT's</h2>
+		<h2 class="mt-5 text-xl text-center">Yo dawg, we heard you like NFTs so we made an NFT for your NFTs</h2>
 		<MintInfo class="mt-10 sm:mt-5" />
 	</div>
 </section>
@@ -117,7 +117,7 @@
 			</h1>
 			<p class="mt-5 text-base max-w-[600px] text-center ">
 				Using the latest indexer technology Biomes are able to dynamically load and keep track of
-				what NFT's are in your wallet. This includes both ZRC-1* and ZRC-6 based NFTs!
+				what NFTs are in your wallet. This includes both ZRC-1* and ZRC-6 based NFTs!
 			</p>
 		</div>
 		<div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-20 mx-auto px-5">
