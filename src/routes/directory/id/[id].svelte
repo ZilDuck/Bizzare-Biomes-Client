@@ -4,8 +4,9 @@
 		const page = url.searchParams.get('page') ?? 1;
 
 		const { metadata } = await fetch(`/api/biome/${id}.json`).then((r) => r.json());
+
 		const { pagination, ownedNFTs } = await fetch(
-			`/api/address/${metadata.base16}.json?page=${page}&size=20`
+			`/api/address/${metadata.bech16}.json?page=${page}&size=20`
 		).then((r) => r.json());
 		const truncatedWallet = metadata.bech32
 			? `${metadata.bech32.slice(0, 6)}...${metadata.bech32.slice(-6)}`
@@ -13,7 +14,6 @@
 
 		const biomeData = metadata;
 
-		const nftImage = metadata.resources[0].uri;
 		const biomeName = metadata.name;
 
 		return {
@@ -24,7 +24,6 @@
 				biomeData,
 				ownedNFTs,
 				truncatedWallet,
-				nftImage,
 				pagination
 			}
 		};
@@ -46,7 +45,6 @@
 	export let biomeData: any;
 	export let ownedNFTs: any;
 	export let truncatedWallet: string;
-	export let nftImage: string;
 	export let pagination = {
 		size: 20,
 		page: 1,
