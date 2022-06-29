@@ -1,5 +1,13 @@
-<script context="module" lang="ts">
-	export const prerender = true;
+<script context="module">
+	export async function load({ params, fetch }) {
+		const {biomes} = await fetch(`/api/biomes/recent.json`).then((r) => r.json())
+
+		return {
+			props: {
+				biomes
+			}
+		};
+	}
 </script>
 
 <script lang="ts">
@@ -7,6 +15,7 @@
 
 	import MintInfo from '../components/MintInfo.svelte';
 	import RecentlyMinted from '../components/RecentlyMinted.svelte';
+	import BiomeCard from "../components/BiomeCard.svelte";
 
 	// Backgrounds
 	let pineForest = '/assets/backgrounds/Pine forest.png';
@@ -15,14 +24,13 @@
 	let spikyRidge = '/assets/backgrounds/Spiky ridge.png';
 	let floatingIsland = '/assets/compositions/1.png';
 
-	// Ducks
-	let duck1 = '/assets/ducks/1.png';
-
 	// NFTs
 	let ducknft = '/assets/nfts/duck.png';
 	let demons = '/assets/nfts/demons.png';
 	let beanterra = '/assets/nfts/beanterra.png';
 	let soulless = '/assets/nfts/soulless.png';
+
+	export let biomes: any[]
 
 	// Team details
 	const team = [
@@ -120,6 +128,11 @@
 				what NFTs are in your wallet. This includes both ZRC-1* and ZRC-6 based NFTs!
 			</p>
 		</div>
+		// NFTs
+		let ducknft = '/assets/nfts/duck.png';
+		let demons = '/assets/nfts/demons.png';
+		let beanterra = '/assets/nfts/beanterra.png';
+		let soulless = '/assets/nfts/soulless.png';
 		<div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-20 mx-auto px-5">
 			<div class="bg-transparent flex flex-col items-center justify-center rounded-lg">
 				<img src={ducknft} alt="Floating island" class="max-w-[100%]" />
@@ -143,14 +156,18 @@
 	<div class="max-w-screen-xl py-28 mx-auto px-5">
 		<div class="max-w-screen-xl flex mx-auto justify-center items-center flex-col text-white ">
 			<h1 class="font-semibold text-3xl  md:text-4xl max-w-[496px] text-center">
-				View the latest Biomes minted
+				Latest Biomes minted
 			</h1>
 			<p class="mt-5 text-base max-w-[600px] text-center">
-				Welcome to the newest project from the team behind Ducks and Zilkroad. A collection of 2000
+				Welcome to the newest project from the team behind Ducks and Zilkroad. A collection of 3000
 				different worlds from the multiverse.
 			</p>
 		</div>
-		<RecentlyMinted class="mt-20" />
+		{#if biomes}
+			{#each biomes as biome}
+				<BiomeCard id={biome.id} {biome} />
+			{/each}
+		{/if}
 	</div>
 </section>
 
