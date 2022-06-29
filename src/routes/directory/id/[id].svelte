@@ -105,7 +105,7 @@
 			>
 		</div>
 		<div class="relative mb-5">
-			<BiomeCard imageText={nftImage} />
+			<BiomeCard id={biomeData.id} biome={biomeData} />
 		</div>
 		<div
 			class="bg-white rounded-lg w-full max-w-screen-xl flex flex-col sm:flex-row justify-start sm:justify-between sm:items-center p-5"
