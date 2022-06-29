@@ -13,18 +13,13 @@
 
 	export let biome: Biome;
 	export let id: number;
-	export let imageText: string; // TEMP WHILE CONTRACTS NOT UP
 
 	$: image = '';
 
 	onMount(() => {
-		const resolveIPFS = (ipfs: string): string => {
-			if (!ipfs.toLowerCase().startsWith('ipfs')) return ipfs;
-			return `https://cloudflare-ipfs.com/ipfs/${ipfs.split('ipfs://')[1]}`;
-		};
-
-		if (biome) image = resolveIPFS(biome!.resources![0]!.uri);
-		if (imageText) image = resolveIPFS(imageText);
+		if (biome) {
+			image = `https://cdn.zildexr.com/0x38c30391667d178e982af3a14e8bd2aa00efc771/${biome.id}`;
+		}
 	});
 </script>
 
