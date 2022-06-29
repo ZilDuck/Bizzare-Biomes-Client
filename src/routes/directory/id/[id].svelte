@@ -6,7 +6,7 @@
 		const { metadata } = await fetch(`/api/biome/${id}.json`).then((r) => r.json());
 
 		const { pagination, ownedNFTs } = await fetch(
-			`/api/address/${metadata.bech16}.json?page=${page}&size=20`
+			`/api/address/${metadata.base16}.json?page=${page}&size=20`
 		).then((r) => r.json());
 		const truncatedWallet = metadata.bech32
 			? `${metadata.bech32.slice(0, 6)}...${metadata.bech32.slice(-6)}`
