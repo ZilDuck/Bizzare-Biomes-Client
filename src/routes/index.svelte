@@ -128,11 +128,6 @@
 				what NFTs are in your wallet. This includes both ZRC-1* and ZRC-6 based NFTs!
 			</p>
 		</div>
-		// NFTs
-		let ducknft = '/assets/nfts/duck.png';
-		let demons = '/assets/nfts/demons.png';
-		let beanterra = '/assets/nfts/beanterra.png';
-		let soulless = '/assets/nfts/soulless.png';
 		<div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-20 mx-auto px-5">
 			<div class="bg-transparent flex flex-col items-center justify-center rounded-lg">
 				<img src={ducknft} alt="Floating island" class="max-w-[100%]" />
